@@ -1,17 +1,25 @@
 import React,{ Component } from 'react';
 
-const LobbyItem = (prop) => {
-    return(
-        <div className="lobby-item">
-            <div className="display-picture">
-                <img src={prop.img} alt={prop.alt} />
+class LobbyItem extends Component {
+    readMoreClicked(){
+        console.log('clicked');
+    }
+
+    render(){
+        return(
+            <div className="lobby-item">
+                <h3>{this.props.Name}</h3>
+                <div className="display-picture">
+                    <img className="LobbyImage" src={this.props.img} alt={this.props.alt} />
+                </div>
+                <div className="item-info">
+                    <p>{this.props.Desc}</p>
+
+                    <button className="readMore" onClick={this.readMoreClicked}>View Category</button>
+                </div>
             </div>
-            <div className="item-info">
-                <h3>{prop.Name}</h3>
-                <p>{prop.Desc}</p>
-            </div>
-        </div>
-    );
+        );
+    }
 };
 
 export default LobbyItem;

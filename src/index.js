@@ -10,6 +10,7 @@ import JusBussIndex from './components/jusBussIndex';
 import Restaurant from './components/restaurantIndex';
 import House from './components/houseIndex';
 import Header from './components/header';
+import LogIn from './components/login';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -22,6 +23,7 @@ ReactDOM.render(
           <Switch>
             <Route path="/restaurants" component={Restaurant} />
             <Route path="/houses" component={House} />
+            <Route path="/login" component={LogIn} />
             <Route path="/" component={JusBussIndex} />
           </Switch>
         </div>
