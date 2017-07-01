@@ -8,6 +8,7 @@ import promise from 'redux-promise';
 import reducers from './reducers';
 import JusBussIndex from './components/jusBussIndex';
 import Restaurant from './components/restaurantIndex';
+import House from './components/houseIndex';
 import Header from './components/header';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Header />
           <Switch>
             <Route path="/restaurants" component={Restaurant} />
+            <Route path="/houses" component={House} />
             <Route path="/" component={JusBussIndex} />
           </Switch>
         </div>

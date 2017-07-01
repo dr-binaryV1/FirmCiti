@@ -3,6 +3,14 @@ import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 
 class Header extends Component{
+  constructor(){
+    super();
+
+    this.state = {
+      loggedIn: false
+    };
+  }
+
     onSubmit(values){
 
     }
@@ -20,12 +28,18 @@ class Header extends Component{
                     <form onSubmit={ this.onSubmit.bind(this) }>
                       <input
                         className="searchBar"
+                        placeholder="Search"
                         type="text" />
                     </form>
                   </div>
                   <div className="navBarContainer">
                     <Link to="/" className="nav-item">Home</Link>
-                    <Link to="/Restaurants" className="nav-item">Restaurants</Link>
+                    <Link to="/houses" className="nav-item">Houses</Link>
+                    <Link to="/restaurants" className="nav-item">Restaurants</Link>
+                  </div>
+                  <div className="AuthLinksContainer">
+                  <Link to="#" className="login">Login</Link>
+                  <Link to="#" className="signUp">Sign Up</Link>
                   </div>
                 </div>
             </div>

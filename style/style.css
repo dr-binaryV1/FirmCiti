@@ -36,6 +36,7 @@
   border: 0px;
   background: #2F6EED;
   position: absolute;
+  padding: 5px;
   left: 20%;
   top: 2%;
 }
@@ -67,4 +68,39 @@
 .nav-item:hover, .nav-item:active, .nav-item:visited, .nav-item:focus{
   text-decoration: none;
   color: #FFF;
+}
+
+.AuthLinksContainer{
+  position: absolute;
+  right: 1vw;
+}
+
+.AuthLinksContainer a, .AuthLinksContainer a:active, .AuthLinksContainer a:visited,
+.AuthLinksContainer a:focus, .AuthLinksContainer a:hover{
+  color: #FFF;
+  font-size: 18px;
+  font-family: Roboto;
+  text-decoration: none;
+}
+
+.login{
+  margin-right: 10px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #CCC;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #CCC;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #CCC;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #CCC;
+}
+
+.underConstruction{
+  width: 100%;
+  height: 100%;
 }

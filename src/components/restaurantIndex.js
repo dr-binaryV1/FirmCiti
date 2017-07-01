@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Construction from './construction';
 
 
 class Restaurant extends Component{
     render(){
         return(
             <div>
-                <h2>Welcome to the Restaurant View</h2>
+                <Construction />
             </div>
         );
     }
