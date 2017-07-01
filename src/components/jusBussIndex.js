@@ -6,6 +6,7 @@ import { fetchUniverisity } from '../actions';
 class JusBussIndex extends Component {
     componentDidMount(){
         this.props.fetchUniverisity();
+        <Title render="JusBuss"/>
     }
 
     renderUniversity(){
