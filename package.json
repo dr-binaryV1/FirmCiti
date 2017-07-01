@@ -35,7 +35,10 @@
     "react-router": "^2.0.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.0.4",
+<<<<<<< HEAD
     "redux-form": "^6.8.0",
+=======
+>>>>>>> 01667d91e8be39dc24a467d1b97b6a2ed1c98cef
     "redux-promise": "^0.5.3"
   }
 }
