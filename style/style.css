@@ -1,0 +1,69 @@
+.container{
+  width: 100vw;
+}
+
+.header{
+  width: 100vw;
+  height: 70px;
+  margin: 0px;
+  padding: 0px;
+  background: #2F80ED;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logoContainer{
+  width: 147px;
+  height: 59px;
+  font-family: Rambla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 100%;
+  color: #FFFFFF;
+  position: absolute;
+  margin-left: 20px;
+  top: 2%;
+}
+
+.searchBar{
+  font-size: 24px;
+  font-family: Roboto;
+  color: #FFF;
+  width: 30%;
+  height: 45px;
+  border-radius: 5px;
+  border: 0px;
+  background: #2F6EED;
+  position: absolute;
+  left: 20%;
+  top: 2%;
+}
+
+.navBarContainer{
+  position: absolute;
+  left: 55%;
+  top: 4%;
+}
+
+.nav-item{
+  width: 79px;
+  height: 43px;
+  background: #2F6EED;
+  width: 49px;
+  height: 45px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 100%;
+  color: #FFFFFF;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px;
+  margin-right: 5px;
+}
+
+.nav-item:hover, .nav-item:active, .nav-item:visited, .nav-item:focus{
+  text-decoration: none;
+  color: #FFF;
+}
