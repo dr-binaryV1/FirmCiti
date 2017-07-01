@@ -1,7 +1,10 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Title, { flushTitle } from 'react-title-component';
+
 import { fetchUniverisity } from '../actions';
+import LobbyItem from './jusBussLobbyItem';
 
 class JusBussIndex extends Component {
     componentDidMount(){
@@ -21,10 +24,8 @@ class JusBussIndex extends Component {
 
     render(){
         return(
-            <div>
-                <ul>
-                    { this.renderUniversity() }
-                </ul>
+            <div className="LobbyContainer">
+                <LobbyItem Name="Restaurant" Desc="This works!!!"/>
             </div>
         );
     }
