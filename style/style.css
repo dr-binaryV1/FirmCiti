@@ -95,6 +95,7 @@
 
 .DisplayImageContainer{
   margin-right: 15px;
+  height: 100%;
 }
 
 .item-info{
@@ -234,6 +235,8 @@ form a {
 
 .information{
   font-family: Roboto;
+  width: 60%;
+  float: right;
   height: 100%;
 }
 
@@ -296,8 +299,12 @@ element.style {
   font-family: Roboto;
   background: #FFFFFF;
   padding: 20px;
+  float: left;
+  clear: left;
+  width: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
+  position: relative;
 }
 
 .blue-links, .blue-links:hover, .blue-links:visited, .blue-links:focus, .blue-links:active{
@@ -308,4 +315,9 @@ element.style {
 
 .filterRestaurant{
   width: 300px;
+}
+
+.left{
+  float: left;
+  width: 100%;
 }
