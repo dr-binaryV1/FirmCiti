@@ -3,6 +3,7 @@ import axios from 'axios';
 export const FETCH_UNIVERSITY = "fetch_university";
 export const FETCH_RESTAURANT = "fetch_restaurant";
 export const LOGIN = "login";
+export const SIGNUP = "signup";
 
 const ROOT_URL = 'http://jusbuss.herokuapp.com';
 
@@ -31,4 +32,13 @@ export function login(values){
         type: LOGIN,
         payload: request
     };
+}
+
+export function signup(values){
+    const request = axios.post(`${ROOT_URL}/signup`, values);
+
+    return {
+        type: SIGNUP,
+        payload: request
+    }
 }
