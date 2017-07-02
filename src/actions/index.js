@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const FETCH_UNIVERSITY = "fetch_university";
+export const LOGIN = "login";
 
 const ROOT_URL = 'http://jusbuss.herokuapp.com';
 
@@ -10,5 +11,13 @@ export function fetchUniverisity(){
     return  {
         type: FETCH_UNIVERSITY,
         payload: request
+    };
+}
+
+export function login(values){
+
+    return {
+        type: LOGIN,
+        payload: "login"
     };
 }
