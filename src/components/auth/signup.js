@@ -23,16 +23,16 @@ class SignUp extends Component {
         );
     }
 
-    onsubmit(values){
+    onSubmit(values){
 
     }
 
     render(){
-        const { handeuSubmit } = this.props;
+        const { handleSubmit } = this.props;
 
         return (
             <div className="signupContainer">
-                <h2>Log up to gain access to JusBuss Dashboard</h2>
+                <h2>Sign up to gain access to the Dashboard</h2>
                 <p>Use dashboard to create, delete and update products/service information.</p>
 
                 <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
@@ -90,11 +90,11 @@ function validate(values){
     }
 
     if(!values.email || values.email.length < 10){
-        error.email = "Enter a valid email address.";
+        errors.email = "Enter a valid email address.";
     }
 
     if(!values.tel || values.tel.length < 7){
-        error.tel = "Enter a valid phone #";
+        errors.tel = "Enter a valid phone #";
     }
 }
 

@@ -176,9 +176,23 @@ form a {
   margin-left: 5px;
 }
 
-.loginContainer{
-  width: 40%;
+.AuthContainer{
   margin-top: 20px;
+}
+
+.LogInAuthContainer{
+  position: relative;
+  width: 30%;
+  float: left;
+  left: 0px;
+  margin-right: 10%;
+}
+
+.SignUpAuthContainer{
+  position: relative;
+  width: 50%;
+  float: left;
+  right: 0px;
 }
 
 .restaurantItem{

@@ -39,8 +39,7 @@ class Header extends Component{
                     <Link to="/restaurants" className="nav-item">Restaurants</Link>
                   </div>
                   <div className="AuthLinksContainer">
-                  <Link to="/login" className="login">Login</Link>
-                  <Link to="#" className="signUp">Sign Up</Link>
+                  <Link to="/authorize" className="login">Login / SignUp</Link>
                   </div>
                 </div>
             </div>
