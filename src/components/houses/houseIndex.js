@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Construction from './construction';
+import Construction from '../construction';
 import Title, { flushTitle } from 'react-title-component';
 
 class House extends Component {

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Construction from './construction';
 import Title, { flushTitle } from 'react-title-component';
 import { connect } from 'react-redux';
 
-import { fetchRestaurant } from '../actions';
+import { fetchRestaurant } from '../../actions';
 import RestaurantItem from './restaurantItem';
 
 class Restaurant extends Component{

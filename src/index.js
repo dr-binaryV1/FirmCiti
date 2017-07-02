@@ -6,11 +6,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import promise from 'redux-promise';
 
 import reducers from './reducers';
-import JusBussIndex from './components/jusBussIndex';
-import Restaurant from './components/restaurantIndex';
-import House from './components/houseIndex';
+import JusBussIndex from './components/home/jusBussIndex';
+import Restaurant from './components/restaurants/restaurantIndex';
+import House from './components/houses/houseIndex';
 import Header from './components/header';
-import LogIn from './components/login';
+import LogIn from './components/auth/login';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 

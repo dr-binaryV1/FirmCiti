@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { login } from '../actions';
+import { login } from '../../actions';
 
 class LogIn extends Component{
     renderField(field){
@@ -52,9 +52,9 @@ class LogIn extends Component{
                 <p>Use dashboard to create, delete and update products/service information.</p>
                 <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                     <Field
-                        label="Username / Email:"
+                        label="Email:"
                         name="email" 
-                        type="text"
+                        type="email"
                         component={this.renderField} />
 
                     <Field
@@ -78,7 +78,7 @@ function validate(values){
 
     // Validate the inputs from the values object
     if(!values.email || values.email.length < 5){
-        errors.email = "Enter a title that is atleast 5 characters!";
+        errors.email = "Enter a valid Email address";
     }
 
     if(!values.password || values.password.length < 5){

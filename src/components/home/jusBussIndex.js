@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Title, { flushTitle } from 'react-title-component';
 
-import { fetchUniverisity } from '../actions';
+import { fetchUniverisity } from '../../actions';
 import LobbyItem from './jusBussLobbyItem';
 
 class JusBussIndex extends Component {
@@ -26,7 +26,7 @@ class JusBussIndex extends Component {
         return(
             <div className="Container">
                 <LobbyItem 
-                    Name="University" 
+                    Name="Universities" 
                     Desc="View Universities in your area. Check out locations and chill spots on campus and more." 
                     img="src/static/images/utech.jpg"
                     alt="University Image" 
