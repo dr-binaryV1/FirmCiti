@@ -14,9 +14,8 @@ export function fetchUniverisity(){
     };
 }
 
-export function login(values, callback){
-    const request = axios.post(`${ROOT_URL}/login`)
-        .then(() => callback());
+export function login(values){
+    const request = axios.post(`${ROOT_URL}/login`, values);
 
     return {
         type: LOGIN,

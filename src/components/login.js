@@ -22,8 +22,22 @@ class LogIn extends Component{
         );
     }
 
-    onSubmit(){
-        console.log('Form submitted');
+    onSubmit(values){
+        this.props.login(values);
+
+        this.checkLoginStatus();
+    }
+
+    checkLoginStatus(){
+        if(this.props.loginStatus === "success"){
+            this.props.history.push('/dashboard');
+        }
+        else{
+            window.setTimeout(() => {
+                this.checkLoginStatus();
+            }, 100 
+         )
+        }
     }
 
     render(){
@@ -36,7 +50,7 @@ class LogIn extends Component{
                 <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                     <Field
                         label="Username / Email:"
-                        name="username" 
+                        name="email" 
                         type="text"
                         component={this.renderField} />
 
@@ -49,6 +63,8 @@ class LogIn extends Component{
                     <button type="submit" className="btn btn-primary">Log In</button>
                     <Link to="/" className="btn btn-danger">Cancel</Link>
                 </form>
+
+                <p id="responds" className="has-danger"></p>
             </div>
         );
     }
@@ -58,8 +74,8 @@ function validate(values){
     const errors = {};
 
     // Validate the inputs from the values object
-    if(!values.username || values.username.length < 5){
-        errors.username = "Enter a title that is atleast 5 characters!";
+    if(!values.email || values.email.length < 5){
+        errors.email = "Enter a title that is atleast 5 characters!";
     }
 
     if(!values.password || values.password.length < 5){
@@ -68,9 +84,13 @@ function validate(values){
     return errors;
 }
 
+function mapStateToProps(state){
+    return { loginStatus: state.loginStatus }
+}
+
 export default reduxForm({
     form: 'LogInForm',
     validate
 })(
-    connect(null, { login }) (LogIn)
+    connect(mapStateToProps, { login }) (LogIn)
 );
