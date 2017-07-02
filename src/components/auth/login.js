@@ -50,7 +50,7 @@ class LogIn extends Component{
         return(
             <div className="loginContainer">
                 <h3>Log in</h3>
-                <p>Use dashboard to create, delete and update products/service information.</p>
+                <p>Log in to your personal Dashboard.</p>
                 <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                     <Field
                         label="Email:"
