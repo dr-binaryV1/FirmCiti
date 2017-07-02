@@ -14,10 +14,12 @@ export function fetchUniverisity(){
     };
 }
 
-export function login(values){
+export function login(values, callback){
+    const request = axios.post(`${ROOT_URL}/login`)
+        .then(() => callback());
 
     return {
         type: LOGIN,
-        payload: "login"
+        payload: request
     };
 }

@@ -13,7 +13,7 @@ class LogIn extends Component{
                 <label>{field.label}</label>
                 <input
                     className="form-control"
-                    type="text"
+                    type={field.type}
                     {...field.input} />
                 <div className="text-help">
                     {touched ? error : ''}
@@ -35,13 +35,15 @@ class LogIn extends Component{
                 <p>Use dashboard to create, delete and update products/service information.</p>
                 <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                     <Field
-                        label="Username:"
+                        label="Username / Email:"
                         name="username" 
+                        type="text"
                         component={this.renderField} />
 
                     <Field
                         label="Password:"
                         name="password" 
+                        type="password"
                         component={this.renderField} />
 
                     <button type="submit" className="btn btn-primary">Log In</button>
