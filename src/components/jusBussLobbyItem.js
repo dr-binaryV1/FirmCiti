@@ -1,10 +1,7 @@
 import React,{ Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class LobbyItem extends Component {
-    readMoreClicked(){
-        console.log('clicked');
-    }
-
     render(){
         return(
             <div className="lobby-item">
@@ -15,7 +12,7 @@ class LobbyItem extends Component {
                 <div className="item-info">
                     <p>{this.props.Desc}</p>
 
-                    <button className="readMore" onClick={this.readMoreClicked}>View Category</button>
+                    <Link className="readMore" to="/restaurants">View Category</Link>
                 </div>
             </div>
         );

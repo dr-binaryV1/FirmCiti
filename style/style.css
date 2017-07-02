@@ -128,8 +128,9 @@
   margin-right: 10px;
 }
 
-.readMore{
+.readMore, .readMore:hover, .readMore:focus, .readMore:visited, .readMore:active{
   border-radius: 5px;
+  text-decoration: none;
   background-color: #2F6EED;
   border: 0;
   color: #FFF;

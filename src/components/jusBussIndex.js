@@ -29,25 +29,29 @@ class JusBussIndex extends Component {
                     Name="University" 
                     Desc="View Universities in your area. Check out locations and chill spots on campus and more." 
                     img="src/static/images/utech.jpg"
-                    alt="University Image" />
+                    alt="University Image" 
+                    url="#" />
 
                 <LobbyItem 
                     Name="Restaurants" 
                     Desc="a place where people pay to sit and eat meals that are cooked and served on the premises." 
                     img="src/static/images/restaurant.jpg"
-                    alt="Restaurant Image" />
+                    alt="Restaurant Image"
+                    url="/restaurants" />
 
                 <LobbyItem 
                     Name="Houses for Rent" 
                     Desc="an agreement where a payment is made for the temporary use of a good, service..." 
                     img="src/static/images/rentHouse.jpg"
-                    alt="House for rent Image" />
+                    alt="House for rent Image"
+                    url="/houses" />
 
                 <LobbyItem 
                     Name="Events" 
                     Desc="View upcoming events in your location, bookmark and add these events to your calendar." 
                     img="src/static/images/Upcoming-Events.jpg"
-                    alt="Events Image" />
+                    alt="Events Image"
+                    url="#" />
             </div>
         );
     }

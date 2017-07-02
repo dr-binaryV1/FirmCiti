@@ -4,7 +4,16 @@ import { LOGIN } from '../actions';
 export default function(state = {}, action){
     switch(action.type){
         case LOGIN:
-            return action.payload.data.message;
+            if(action.payload.data !== undefined){
+                console.log(action.payload);
+                if(action.payload.data.error !== undefined){
+                    return action.payload.data.error.message;
+                }
+
+                if(action.payload.data !== undefined){
+                    return action.payload.data.message;
+                } 
+            }
         default:
             return state;
     }
