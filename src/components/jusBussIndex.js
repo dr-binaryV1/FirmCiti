@@ -24,7 +24,7 @@ class JusBussIndex extends Component {
 
     render(){
         return(
-            <div className="LobbyContainer">
+            <div className="Container">
                 <LobbyItem 
                     Name="University" 
                     Desc="View Universities in your area. Check out locations and chill spots on campus and more." 
