@@ -15,7 +15,7 @@ const RestaurantItem = (props) => {
                 <p> Telephone: { props.Tel } </p>
                 <p> Open Hours: { props.OpenClose } </p>
 
-                <Link to="/" className="btn btn-primary">View Menu</Link>
+                <Link to="/" className="btn btn-primary">View Details</Link>
             </div>
         </div>
     );

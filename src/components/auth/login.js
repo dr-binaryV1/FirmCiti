@@ -49,7 +49,7 @@ class LogIn extends Component{
 
         return(
             <div className="loginContainer">
-                <h2>Log in to JusBuss Dashboard</h2>
+                <h3>Log in</h3>
                 <p>Use dashboard to create, delete and update products/service information.</p>
                 <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                     <Field

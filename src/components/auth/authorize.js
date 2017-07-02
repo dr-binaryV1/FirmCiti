@@ -5,6 +5,8 @@ import SignUp from './signup';
 const Auth = (props) => {
     return(
         <div className="AuthContainer">
+            <h2>Get Authenticated or Join the JusBuss Environment!</h2>
+            <hr />
             <div className="LogInAuthContainer">
                 <LogIn />
             </div>

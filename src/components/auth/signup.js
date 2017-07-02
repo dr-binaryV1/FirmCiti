@@ -24,7 +24,8 @@ class SignUp extends Component {
     }
 
     onSubmit(values){
-
+        //this.signup(values);
+        console.log('clicked');
     }
 
     render(){
@@ -32,7 +33,7 @@ class SignUp extends Component {
 
         return (
             <div className="signupContainer">
-                <h2>Sign up to gain access to the Dashboard</h2>
+                <h3>Sign up to gain access to the Dashboard</h3>
                 <p>Use dashboard to create, delete and update products/service information.</p>
 
                 <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
@@ -50,7 +51,7 @@ class SignUp extends Component {
 
                     <Field
                         label="Username:"
-                        name="user"
+                        name="username"
                         type="text"
                         component={ this.renderField } />
 
@@ -96,6 +97,8 @@ function validate(values){
     if(!values.tel || values.tel.length < 7){
         errors.tel = "Enter a valid phone #";
     }
+
+    return errors;
 }
 
 function mapStateToProps(state){

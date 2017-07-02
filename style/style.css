@@ -178,6 +178,11 @@ form a {
 
 .AuthContainer{
   margin-top: 20px;
+  font-family: Roboto;
+}
+
+.AuthContainer h2 {
+  color: #2F6EED;
 }
 
 .LogInAuthContainer{
@@ -202,6 +207,10 @@ form a {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 30px;
   border-radius: 5px;
+}
+
+.restaurantItem h2{
+  color: #2F6EED;
 }
 
 .information{
