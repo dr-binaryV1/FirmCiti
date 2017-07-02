@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const FETCH_UNIVERSITY = "fetch_university";
-export const FETCH_RESTAURANT = "fetch_restaurant";
+export const FETCH_RESTAURANTS = "fetch_restaurants";
+export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
 export const LOGIN = "login";
 export const SIGNUP = "signup";
 
@@ -16,11 +17,20 @@ export function fetchUniverisity(){
     };
 }
 
-export function fetchRestaurant(){
+export function fetchRestaurants(){
     const request = axios.get(`${ROOT_URL}/dining`);
 
     return {
-        type: FETCH_RESTAURANT,
+        type: FETCH_RESTAURANTS,
+        payload: request
+    }
+}
+
+export function fetchRestaurantDetail(id){
+    const request = axios.get(`${ROOT_URL}/dining/${id}`);
+
+    return {
+        type: FETCH_RESTAURANT_DETAIL,
         payload: request
     }
 }

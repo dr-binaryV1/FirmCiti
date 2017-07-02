@@ -6,7 +6,7 @@ const Auth = (props) => {
     return(
         <div className="AuthContainer">
             <h2>Get Authenticated or Join the JusBuss Environment!</h2>
-            <hr />
+            <hr className="line-brightPink-left" />
             <div className="LogInAuthContainer">
                 <LogIn />
             </div>

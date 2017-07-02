@@ -231,3 +231,44 @@ form a {
 .information{
   font-family: Roboto;
 }
+
+
+hr.line-blue-left {
+    border: 0;
+    height: 5px;
+    background-color: #41a9c6;
+    width: 66px;
+    margin-left: 0px;}
+
+
+hr.line-orange-center {
+        border: 0;
+        height: 3px;
+        background-color: #f57e3a;
+        width: 166px;}
+
+hr.line-brightPink-left {
+        border: 0;
+        height: 3px;
+        background-color: #ED2F55;
+        width: 166px;
+        margin-left: 0px;
+        }
+  
+
+hr.line-green-right {
+        border: 0;
+        height: 5px;
+        background-color: #2cba6c;
+        width: 66px;
+        margin-right: 0px;}
+
+.form-elements-container{
+  width: 100%;
+  height: 110px;
+}
+
+
+element.style {
+    height: 140px;
+}

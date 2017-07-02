@@ -37,20 +37,22 @@ class SignUp extends Component {
                 <p>Use dashboard to create, delete and update products/service information.</p>
 
                 <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
-                    <div className="left-item">
-                        <Field
-                            label="First Name:"
-                            name="first_name"
-                            type="text"
-                            component={ this.renderField } />
-                    </div>
+                    <div className="form-elements-container">
+                        <div className="left-item">
+                            <Field
+                                label="First Name:"
+                                name="first_name"
+                                type="text"
+                                component={ this.renderField } />
+                        </div>
 
-                    <div className="right-item">
-                        <Field
-                            label="Last Name:"
-                            name="last_name"
-                            type="text"
-                            component={ this.renderField } />
+                        <div className="right-item">
+                            <Field
+                                label="Last Name:"
+                                name="last_name"
+                                type="text"
+                                component={ this.renderField } />
+                        </div>
                     </div>
 
                     <Field
@@ -71,20 +73,22 @@ class SignUp extends Component {
                         type="phone"
                         component={ this.renderField } />
 
-                    <div className="left-item">
-                        <Field
-                            label="Password:"
-                            name="password"
-                            type="password"
-                            component={ this.renderField } />
-                    </div>
+                    <div className="form-elements-container">
+                        <div className="left-item">
+                            <Field
+                                label="Password:"
+                                name="password"
+                                type="password"
+                                component={ this.renderField } />
+                        </div>
 
-                    <div className="right-item">
-                        <Field
-                            label="Confirm Password:"
-                            name="confirm_password"
-                            type="password"
-                            component={ this.renderField } />
+                        <div className="right-item">
+                            <Field
+                                label="Confirm Password:"
+                                name="confirm_password"
+                                type="password"
+                                component={ this.renderField } />
+                        </div>
                     </div>
 
                     <br />
@@ -121,6 +125,10 @@ function validate(values){
 
     if(!values.password || values.password.length < 5){
         errors.password = "Please enter a strong password thats atleast 5 characters.";
+    }
+
+    if(!values.confirm_password){
+        errors.confirm_password = "Please enter value to compare passwords.";
     }
 
     if(values.password !== values.conform_password){

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Title, { flushTitle } from 'react-title-component';
 import { connect } from 'react-redux';
 
-import { fetchRestaurant } from '../../actions';
+import { fetchRestaurants } from '../../actions';
 import RestaurantItem from './restaurantItem';
 
 class Restaurant extends Component{
     componentDidMount(){
         <Title render="JusBuss | Restaurants"/>
-        this.props.fetchRestaurant();
+        this.props.fetchRestaurants();
     }
 
     renderRestaurants(){
@@ -20,7 +20,9 @@ class Restaurant extends Component{
                     Address = { restaurant.address }
                     Tel = { restaurant.tel }
                     OpenClose = { `${restaurant.openTime}AM - ${restaurant.closeTime}PM`}
-                    Img = "src/static/images/noImage.jpg" />
+                    Id = { restaurant._id }
+                    Img = "src/static/images/noImage.jpg"
+                    key = { restaurant._id } />
             );
         });
     }
@@ -38,4 +40,4 @@ function mapStateToProps(state){
     return { restaurants: state.restaurants };
 }
 
-export default connect(mapStateToProps, { fetchRestaurant })(Restaurant);
+export default connect(mapStateToProps, { fetchRestaurants })(Restaurant);
