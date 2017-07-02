@@ -8,13 +8,9 @@ const RestaurantItem = (props) => {
                 <img className="profile-picture" src={ props.Img } alt={ props.Alt } />
             </div>
             <div className="information">
-                <h2> { props.Name }</h2>
+                <h4> { props.Name }</h4>
                 <hr className="line-brightPink-left" />
-                <p> Description: { props.Desc } </p>
-                <p> Address: { props.Address } </p>
-                <p> Telephone: { props.Tel } </p>
-                <p> Open Hours: { props.OpenClose } </p>
-
+                <p> { props.Desc } </p>
                 <Link to={ `/restaurants/${props.Id}` } className="btn btn-primary">View Details</Link>
             </div>
         </div>
