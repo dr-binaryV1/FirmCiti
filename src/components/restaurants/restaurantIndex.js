@@ -30,6 +30,17 @@ class Restaurant extends Component{
     render(){
         return(
             <div className="Container">
+                <div className="filterRestaurant">
+                    <div  className="left-item"><label>Filter Restaurants</label></div>
+                    <div  className="right-item">
+                        <select className="form-control">
+                            <option id="all">All</option>
+                            <option id="chinese">Chinese</option>
+                            <option id="indian">Indian</option>
+                            <option id="jamaican">Jamaica</option>
+                        </select>
+                    </div>
+                </div>
                 { this.renderRestaurants() }
             </div>
         );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
@@ -8,6 +9,14 @@ class RestaurantDetail extends Component{
     componentDidMount(){
         const { id } = this.props.match.params;
         this.props.fetchRestaurantDetail(id);
+    }
+
+    renderMenu(restaurant){
+        return _.map(restaurant.menu, menuItem => {
+            return(
+                <h5> { menuItem.name } </h5>
+            );
+        });
     }
     
     render(){
@@ -40,8 +49,9 @@ class RestaurantDetail extends Component{
                     <Rating />
                 </div>
                 <div className="restaurant-menu">
-                    <h4>View Menu</h4>
-                    <hr className="line-brightPink-left" />
+                    <h4>Menu</h4>
+                    <hr className="line-brightPink-left-sm" />
+                    { this.renderMenu(restaurant) }
                 </div>
             </div>
         );

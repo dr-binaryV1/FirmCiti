@@ -11,7 +11,7 @@ const RestaurantItem = (props) => {
                 <h4> { props.Name }</h4>
                 <hr className="line-brightPink-left" />
                 <p> { props.Desc } </p>
-                <Link to={ `/restaurants/${props.Id}` } className="btn btn-primary">View Details</Link>
+                <Link to={ `/restaurants/${props.Id}` } className="blue-links">View Details</Link>
             </div>
         </div>
     );

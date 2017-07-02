@@ -90,6 +90,7 @@
   margin: 0;
   width: 30%;
   margin-right: 15px;
+  border-radius: 180px;
 }
 
 .DisplayImageContainer{
@@ -233,6 +234,7 @@ form a {
 
 .information{
   font-family: Roboto;
+  height: 100%;
 }
 
 .information a{
@@ -262,6 +264,14 @@ hr.line-brightPink-left {
         width: 166px;
         margin-left: 0px;
         }
+
+hr.line-brightPink-left-sm {
+        border: 0;
+        height: 3px;
+        background-color: #ED2F55;
+        width: 100px;
+        margin-left: 0px;
+        }        
   
 
 hr.line-green-right {
@@ -288,4 +298,14 @@ element.style {
   padding: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
+}
+
+.blue-links, .blue-links:hover, .blue-links:visited, .blue-links:focus, .blue-links:active{
+  color: 2F6EED;
+  font-family: Roboto;
+  text-decoration: none;
+}
+
+.filterRestaurant{
+  width: 300px;
 }
