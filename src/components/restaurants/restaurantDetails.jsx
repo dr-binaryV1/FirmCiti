@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
 
-import { fetchRestaurantDetail, postComment } from '../../actions';
+import { fetchRestaurantDetail, postRestaurantComment } from '../../actions';
 import Recommend from '../recommend/recommendIndex';
 import MenuItem from './restaurantMenuItem';
 
@@ -16,7 +16,10 @@ class RestaurantDetail extends Component{
     }
 
     onSubmit(values){
-        
+        const { id } = this.props.match.params;
+        this.props.postRestaurantComment(values, id, () => {
+            this.props.history.push('/');
+        });
     }
 
     renderMenu(restaurant){
@@ -142,5 +145,5 @@ export default reduxForm({
     form: 'CommentForm',
     validate
 })(
-    connect(mapStateToProps, { fetchRestaurantDetail })(RestaurantDetail)
+    connect(mapStateToProps, { fetchRestaurantDetail, postRestaurantComment })(RestaurantDetail)
 )

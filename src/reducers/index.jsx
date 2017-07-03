@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   restaurants: RestaurantReducer,
   loginStatus: LoginReducer,
   signupStatus: SignupReducer,
-  comment, CommentReducer,
+  comment: CommentReducer,
   form: formReducer
 });
 
