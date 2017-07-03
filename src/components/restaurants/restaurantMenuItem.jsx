@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class MenuItem extends Component {
     openModal(menu){
         console.log(menu.props.id);
+        document.getElementById('myModalLabel').innerHTML = menu.props.name;
+        document.getElementById('modal-body').innerHTML = menu.props.id;
     }
 
     render(){
@@ -10,7 +12,8 @@ class MenuItem extends Component {
             <div 
                 className="MenuItemContainer" 
                 id={ this.props.key } 
-                onClick={ () => this.openModal(this) }>
+                onClick={ () => this.openModal(this) }
+                data-toggle="modal" data-target="#myModal">
                 <h5> { this.props.name } </h5>
             </div>
         );

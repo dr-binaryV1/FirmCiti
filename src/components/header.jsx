@@ -21,9 +21,11 @@ class Header extends Component{
         return(
             <div>
                 <div className="header">
-                  <div className="logoContainer">
-                    <h2>JusBuss</h2>
-                  </div>
+                  <Link to="/" >
+                    <div className="logoContainer">
+                      <h2>JusBuss</h2>
+                    </div>
+                  </Link>
                   <div className="searchBarContainer">
                     <form onSubmit={ this.onSubmit.bind(this) }>
                       <input
