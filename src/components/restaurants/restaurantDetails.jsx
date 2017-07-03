@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
 
 import { fetchRestaurantDetail } from '../../actions';
-import { MenuItem } from './restaurantMenuItem';
+import MenuItem from './restaurantMenuItem';
 
 class RestaurantDetail extends Component{
     componentDidMount(){
@@ -23,6 +23,7 @@ class RestaurantDetail extends Component{
             return(
                 <MenuItem
                     key={ menuItem._id }
+                    id={ menuItem._id }
                     name={ menuItem.name } />
             );
         });
