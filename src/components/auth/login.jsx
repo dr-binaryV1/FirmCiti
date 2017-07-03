@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../actions';
 
@@ -45,7 +45,7 @@ class LogIn extends Component{
     }
 
     render(){
-        const { handleSubmit } = this.props;
+        const { handleSubmit, match, location, history } = this.props;
 
         return(
             <div className="loginContainer">
@@ -96,5 +96,5 @@ export default reduxForm({
     form: 'LogInForm',
     validate
 })(
-    connect(mapStateToProps, { login }) (LogIn)
+    withRouter(connect(mapStateToProps, { login }) (LogIn))
 );
