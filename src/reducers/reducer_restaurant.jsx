@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { FETCH_RESTAURANTS, FETCH_RESTAURANT_DETAIL } from '../actions';
+import { FETCH_RESTAURANTS, FETCH_RESTAURANT_DETAIL, POST_COMMENT } from '../actions';
 
 export default function(state = {}, action){
     switch(action.type){
@@ -7,8 +7,11 @@ export default function(state = {}, action){
             return _.mapKeys(action.payload.data, '_id');
 
         case FETCH_RESTAURANT_DETAIL:
-            return { ...state, [action.payload.data._id]: action.payload.data }
+            return { ...state, [action.payload.data._id]: action.payload.data };
 
+        case POST_COMMENT:
+            return _.mapKeys(action.payload.data, '_id');
+            
         default:
             return state;
     }

@@ -3,6 +3,7 @@ import axios from 'axios';
 export const FETCH_UNIVERSITY = "fetch_university";
 export const FETCH_RESTAURANTS = "fetch_restaurants";
 export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
+export const POST_COMMENT = "post_comment";
 export const LOGIN = "login";
 export const SIGNUP = "signup";
 
@@ -31,6 +32,16 @@ export function fetchRestaurantDetail(id){
 
     return {
         type: FETCH_RESTAURANT_DETAIL,
+        payload: request
+    }
+}
+
+export function postRestaurantComment(values, id, callback){
+    const request = axios.post(`${ROOT_URL}/dining/${id}/comment`)
+        .then(() => callback());
+
+    return {
+        type: POST_COMMENT,
         payload: request
     }
 }

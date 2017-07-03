@@ -56,6 +56,7 @@
 
 .Container{
   position: absolute;
+  float: left;
   margin-top: 20px;
   width: 60%;
   font-family: Roboto;
@@ -346,4 +347,10 @@ element.style {
   border-radius: 5px;
   cursor: pointer; 
   cursor: hand;
+}
+
+.recommend{
+  margin-top: 20px;
+  font-family: Roboto;
+  float: right;
 }

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { fetchRestaurants } from '../../actions';
 import RestaurantItem from './restaurantItem';
+import Recommend from '../recommend/recommendIndex';
 
 class Restaurant extends Component{
     componentDidMount(){
@@ -29,22 +30,28 @@ class Restaurant extends Component{
 
     render(){
         return(
-            <div className="Container animated fadeIn">
-                <h3>Restaurants</h3>
-                <hr className="line-brightPink-left" />
-                <div className="filterRestaurant">
-                    <div  className="left-item"><label>Filter Restaurants</label></div>
-                    <div  className="right-item">
-                        <select className="form-control">
-                            <option id="all">All</option>
-                            <option id="chinese">Chinese</option>
-                            <option id="indian">Indian</option>
-                            <option id="jamaican">Jamaica</option>
-                        </select>
+            <div>
+                <div className="Container animated fadeIn">
+                    <h3>Restaurants</h3>
+                    <hr className="line-brightPink-left" />
+                    <div className="filterRestaurant">
+                        <div  className="left-item"><label>Filter Restaurants</label></div>
+                        <div  className="right-item">
+                            <select className="form-control">
+                                <option id="all">All</option>
+                                <option id="chinese">Chinese</option>
+                                <option id="indian">Indian</option>
+                                <option id="jamaican">Jamaica</option>
+                            </select>
+                        </div>
                     </div>
+                    <br />
+                    { this.renderRestaurants() }
                 </div>
-                <br />
-                { this.renderRestaurants() }
+
+                <div className="recommend animated fadeIn">
+                    <Recommend type="Restaurant" />
+                </div>
             </div>
         );
     }
