@@ -30,6 +30,8 @@ class Restaurant extends Component{
     render(){
         return(
             <div className="Container">
+                <h3>Restaurants</h3>
+                <hr className="line-brightPink-left" />
                 <div className="filterRestaurant">
                     <div  className="left-item"><label>Filter Restaurants</label></div>
                     <div  className="right-item">
@@ -41,6 +43,7 @@ class Restaurant extends Component{
                         </select>
                     </div>
                 </div>
+                <br />
                 { this.renderRestaurants() }
             </div>
         );

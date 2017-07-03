@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
 
-
 import { fetchRestaurantDetail } from '../../actions';
 
 class RestaurantDetail extends Component{
@@ -71,7 +70,7 @@ class RestaurantDetail extends Component{
                         <p>Telephone: { restaurant.tel } </p>
                         <p>Open Hours: { `${restaurant.openTime}AM - ${restaurant.closeTime}PM` } </p>
                         
-                        <h5>Rate { restaurant.name } </h5>
+                        <h5>Rate { restaurant.name }? </h5>
                         <Rating />
                     </div>
                 </div>
