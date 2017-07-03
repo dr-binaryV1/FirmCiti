@@ -11,6 +11,7 @@ import Restaurant from './components/restaurants/restaurantIndex';
 import RestaurantDetails from './components/restaurants/restaurantDetails';
 import House from './components/houses/houseIndex';
 import Header from './components/header';
+import { Footer } from './components/footer';
 import Auth from './components/auth/authorize';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);

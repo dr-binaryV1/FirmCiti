@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const RestaurantItem = (props) => {
     return(
-        <div className="restaurantItem" key={props.key}>
+        <div className="restaurantItem animated fadeIn" key={props.key}>
             <div className="DisplayImageContainer">
                 <img className="profile-picture" src={ props.Img } alt={ props.Alt } />
             

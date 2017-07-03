@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class MenuItem extends Component {
     openModal(menu){
         document.getElementById('myModalLabel').innerHTML = menu.props.name;
-        document.getElementById('modal-body').innerHTML = menu.props.id;
+        document.getElementById('modal-body')
+            .innerHTML = menu.props.id;
     }
 
     render(){
