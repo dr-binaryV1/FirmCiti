@@ -52,7 +52,7 @@ class RestaurantDetail extends Component{
 
         if(!restaurant){
             return (
-                <div className="Container">
+                <div className="Container  animated fadeIn">
                     <Link className="btn btn-primary" to="/restaurants">Back to Restaurants</Link>
                     <h4>Loading...</h4>
                 </div>
@@ -60,7 +60,7 @@ class RestaurantDetail extends Component{
         }
 
         return(
-            <div className="Container">
+            <div className="Container  animated fadeIn">
                 <Link className="btn btn-primary" to="/restaurants">Back to Restaurants</Link>
                 <div className="left">
                     <div className="DisplayImageContainer">

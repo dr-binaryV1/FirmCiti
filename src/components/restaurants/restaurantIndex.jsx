@@ -29,7 +29,7 @@ class Restaurant extends Component{
 
     render(){
         return(
-            <div className="Container">
+            <div className="Container animated fadeIn">
                 <h3>Restaurants</h3>
                 <hr className="line-brightPink-left" />
                 <div className="filterRestaurant">

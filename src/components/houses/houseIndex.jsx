@@ -9,7 +9,7 @@ class House extends Component {
 
   render(){
     return(
-      <div>
+      <div className="Container animated fadeIn">
         <Construction />
       </div>
     );
