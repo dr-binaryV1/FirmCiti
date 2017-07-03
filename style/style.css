@@ -63,7 +63,7 @@
 
 .lobby-item{
   width: 355px;
-  height: 210px;
+  height: 230px;
   float: left;
   left: 0px;
   top: 0px;
@@ -270,7 +270,7 @@ hr.line-brightPink-left {
         border: 0;
         height: 3px;
         background-color: #ED2F55;
-        width: 166px;
+        width: 160px;
         margin-left: 0px;
         }
 

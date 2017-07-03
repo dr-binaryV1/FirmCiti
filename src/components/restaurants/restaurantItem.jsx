@@ -9,7 +9,7 @@ const RestaurantItem = (props) => {
             
                 <div className="information">
                     <h4> { props.Name }</h4>
-                    <hr className="line-brightPink-left" />
+                    <hr className="line-brightPink-left-sm" />
                     <p> { props.Desc } </p>
                     <Link to={ `/restaurants/${props.Id}` } className="blue-links">View Details</Link>
                 </div>
