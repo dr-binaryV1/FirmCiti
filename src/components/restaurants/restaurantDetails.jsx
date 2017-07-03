@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Rating from 'react-rating';
 
 import { fetchRestaurantDetail, postRestaurantComment } from '../../actions';
@@ -145,5 +145,5 @@ export default reduxForm({
     form: 'CommentForm',
     validate
 })(
-    connect(mapStateToProps, { fetchRestaurantDetail, postRestaurantComment })(RestaurantDetail)
+    withRouter(connect(mapStateToProps, { fetchRestaurantDetail, postRestaurantComment })(RestaurantDetail))
 )
