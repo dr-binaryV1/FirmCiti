@@ -327,3 +327,13 @@ element.style {
   float: left;
   width: 100%;
 }
+
+.MenuItemContainer{
+  float: left;
+  clear: left;
+  height: 100px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
