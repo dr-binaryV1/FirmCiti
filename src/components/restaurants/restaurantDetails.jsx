@@ -90,7 +90,6 @@ class RestaurantDetail extends Component{
     }
     
     render(){
-        console.log('rendered');
         const { restaurant, handleSubmit } = this.props;
 
         if(!restaurant){
