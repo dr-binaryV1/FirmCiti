@@ -7,12 +7,15 @@ export const CommentItem = (props) => {
 
     return (
         <div className="comment-item" key={ props.key }>
+            <div className="DisplayImageContainer">
+                 <img className="comment-profile-picture" src="../src/static/images/noImage.jpg" alt="profile picture" />
+            </div>
             <div className="comment-header left">Posted by: { props.name }</div>
             <div className="comment-header right">{dateString} { timeString }</div>
             <br />
             <hr />
             <p><i>{ props.comment }</i></p>
-            <button className="btn btn-primary btn-sm" >Reply</button>
+            <button className="btn btn-primary btn-sm pull-right" >Reply</button>
         </div>
     );
 }

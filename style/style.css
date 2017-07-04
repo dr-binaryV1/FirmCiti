@@ -101,6 +101,17 @@
   border-radius: 180px;
 }
 
+.comment-profile-picture{
+  position: relative;
+  left: 2px;
+  top: 10px;
+  float: left;
+  margin: 0;
+  width: 10%;
+  margin-right: 15px;
+  border-radius: 180px;
+}
+
 .DisplayImageContainer{
   margin-right: 15px;
   height: 100%;
