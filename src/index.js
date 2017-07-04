@@ -25,8 +25,8 @@ ReactDOM.render(
           <Switch>
             <Route path="/restaurants/:id" component={RestaurantDetails} />
             <Route path="/restaurants" component={Restaurant} />
-            <Route path="/houses" component={House} />
             <Route path="/authorize" component={Auth} />
+            <Route path="/houses" component={House} />
             <Route path="/" component={JusBussIndex} />
           </Switch>
         </div>

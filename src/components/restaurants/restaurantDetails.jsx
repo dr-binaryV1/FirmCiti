@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
 import _ from 'lodash';
+import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import Rating from 'react-rating';
 
-import { fetchRestaurantDetail, postRestaurantComment } from '../../actions';
+import { fetchRestaurantDetail, fetchRestaurantComments, postRestaurantComment } from '../../actions';
 import Recommend from '../recommend/recommendIndex';
 import MenuItem from './restaurantMenuItem';
 
@@ -13,13 +13,12 @@ class RestaurantDetail extends Component{
     componentDidMount(){
         const { id } = this.props.match.params;
         this.props.fetchRestaurantDetail(id);
+        this.props.fetchRestaurantComments(id);
     }
 
     onSubmit(values){
         const { id } = this.props.match.params;
-        this.props.postRestaurantComment(values, id, () => {
-            this.props.history.push('/');
-        });
+        this.props.postRestaurantComment(values, id);
     }
 
     renderMenu(restaurant){
@@ -33,22 +32,56 @@ class RestaurantDetail extends Component{
         });
     }
 
+    renderComment(restaurant){
+        if(restaurant.comments.length > 0){
+            return _.map(restaurant.comments, comment => {
+                return(
+                    <p key={ comment._id }> { comment.comment } </p>
+                );
+            }); 
+        }
+
+        if(restaurant.comments.length == 0){
+            return <p><i>No comments yet, be the first to comment on { restaurant.name }'s profile.</i></p>
+
+        }
+    }
+
     renderField(field){
         const { meta: { touched, error } } = field;
         const className = `form-group ${touched && error ? 'has-danger' : ''}`;
         
-        return(
-            <div className = { className }>
-                <label>{ field.label }</label>
-                <input
-                    className="form-control"
-                    type={ field.type }
-                    { ...field.input } />
-                <div className="text-help">
-                    { touched ? error : '' }
+        if(field.type !== "textarea"){
+            return(
+                <div className = { className }>
+                    <label>{ field.label }</label>
+                    <input
+                        className="form-control"
+                        type={ field.type }
+                        { ...field.input } />
+                    <div className="text-help">
+                        { touched ? error : '' }
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
+
+        if(field.type === "textarea"){
+            return(
+                <div className = { className }>
+                    <label>{ field.label }</label>
+                    <textarea
+                        className="form-control"
+                        cols="20"
+                        rows="5"
+                        type={ field.type }
+                        { ...field.input } />
+                    <div className="text-help">
+                        { touched ? error : '' }
+                    </div>
+                </div>
+            );
+        }
     }
     
     render(){
@@ -91,7 +124,7 @@ class RestaurantDetail extends Component{
                     <div className="restaurant-comment">
                         <h4>Comments</h4>
                         <hr className="line-brightPink-left-sm" />
-                        <p><i>No comments yet, be the first to comment on { restaurant.name }'s profile.</i></p>
+                        { this.renderComment(restaurant) }
                         <hr />
                         <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                             <Field
@@ -106,8 +139,11 @@ class RestaurantDetail extends Component{
                                 type="email"
                                 component={this.renderField} />
 
-                            <label>Comment</label>
-                            <textarea className="form-control" rows="5" cols="40" name="comment"></textarea>
+                            <Field
+                                label="Comment:"
+                                name="comment"
+                                type="textarea"
+                                component={this.renderField} />
                             <br />
 
                             <button type="submit" className="btn btn-primary">Comment</button>
@@ -134,6 +170,10 @@ function validate(values){
         errors.email = "Enter a valid Email address";
     }
 
+    if(!values.comment){
+        errors.comment = "Cannot submit an empty comment.";
+    }
+
     return errors;
 }
 
@@ -145,5 +185,9 @@ export default reduxForm({
     form: 'CommentForm',
     validate
 })(
-    withRouter(connect(mapStateToProps, { fetchRestaurantDetail, postRestaurantComment })(RestaurantDetail))
+    withRouter(connect(
+            mapStateToProps, { 
+                        fetchRestaurantDetail,
+                        fetchRestaurantComments,
+                        postRestaurantComment })(RestaurantDetail))
 )
