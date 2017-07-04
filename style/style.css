@@ -375,6 +375,14 @@ element.style {
   color: #2F6EED;
 }
 
+.comment-item button{
+  margin-top: 5px;
+}
+
+.comment-item textarea{
+  display: none;
+}
+
 .recommend{
   margin-top: 20px;
   font-family: Roboto;

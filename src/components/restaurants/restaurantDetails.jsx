@@ -7,18 +7,13 @@ import Rating from 'react-rating';
 
 import { fetchRestaurantDetail, fetchRestaurantComments, postRestaurantComment } from '../../actions';
 import Recommend from '../recommend/recommendIndex';
-import { CommentItem } from '../commentItem';
+import CommentItem from '../commentItem';
 import MenuItem from './restaurantMenuItem';
 
 class RestaurantDetail extends Component{
     componentDidMount(){
         const { id } = this.props.match.params;
         window.setInterval(() => this.props.fetchRestaurantDetail(id), 1000); 
-    }
-
-    componentDidUpdate(){
-        const { id } = this.props.match.params;
-        this.props.fetchRestaurantComments(id);
     }
 
     onSubmit(values){
@@ -45,6 +40,7 @@ class RestaurantDetail extends Component{
                         name={ comment.name }
                         comment={ comment.comment }
                         date={ comment.createdAt }
+                        id={ comment._id }
                         key={ comment._id } />
                 );
             }); 
