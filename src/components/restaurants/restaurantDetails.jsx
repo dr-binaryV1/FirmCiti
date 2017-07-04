@@ -16,6 +16,7 @@ class RestaurantDetail extends Component{
         window.setInterval(() => this.props.fetchRestaurantDetail(id), 1000); 
     }
 
+
     onSubmit(values){
         const { id } = this.props.match.params;
         this.props.postRestaurantComment(values, id);

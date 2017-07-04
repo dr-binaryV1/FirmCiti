@@ -4,7 +4,7 @@ class ReplyItem extends Component{
     render(){
         return(
             <div className="comment-reply right">
-                <p>This is a reply</p>
+                This is a reply
             </div>
         );
     }

@@ -381,14 +381,16 @@ element.style {
 
 .comment-item textarea{
   display: none;
+  margin-top: 5px;
 }
 
 .comment-reply{
   width: 95%;
-  background-color: #EFEFEF;
+  background-color: #FFFFFF;
   border-radius: 3px;
-  padding: 3px;
+  padding: 5px;
   font-family: Roboto;
+  border: 1px solid #EFEFEF;
 }
 
 .recommend{
