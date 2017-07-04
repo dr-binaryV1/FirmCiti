@@ -13,14 +13,12 @@ import MenuItem from './restaurantMenuItem';
 class RestaurantDetail extends Component{
     componentDidMount(){
         const { id } = this.props.match.params;
-        this.props.fetchRestaurantDetail(id);
-        this.props.fetchRestaurantComments(id);
+        window.setInterval(() => this.props.fetchRestaurantDetail(id), 1000); 
     }
 
     componentDidUpdate(){
         const { id } = this.props.match.params;
-        const { restaurant } = this.props;
-        this.renderComment(restaurant);
+        this.props.fetchRestaurantComments(id);
     }
 
     onSubmit(values){
@@ -96,6 +94,7 @@ class RestaurantDetail extends Component{
     }
     
     render(){
+        console.log('rendered');
         const { restaurant, handleSubmit } = this.props;
 
         if(!restaurant){
@@ -136,7 +135,7 @@ class RestaurantDetail extends Component{
                     <div className="restaurant-comment">
                         <h4>Comments</h4>
                         <hr className="line-brightPink-left-sm" />
-                        <div id="comment">{ this.renderComment(restaurant) }</div>
+                        { this.renderComment(restaurant) }
                         <hr />
                         <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                             <Field
@@ -164,7 +163,7 @@ class RestaurantDetail extends Component{
                 </div>
 
                 <div className="recommend animated fadeIn">
-                    <Recommend type="Restaurant" />
+                    <Recommend type="Menu" />
                 </div>
             </div>
         );
@@ -197,9 +196,5 @@ export default reduxForm({
     form: 'CommentForm',
     validate
 })(
-    withRouter(connect(
-            mapStateToProps, { 
-                        fetchRestaurantDetail,
-                        fetchRestaurantComments,
-                        postRestaurantComment })(RestaurantDetail))
+    withRouter(connect(mapStateToProps, { fetchRestaurantDetail, fetchRestaurantComments, postRestaurantComment })(RestaurantDetail))
 )
