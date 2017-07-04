@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class ReplyItem extends Component{
     render(){
         return(
-            <div>
-                
+            <div className="comment-reply right">
+                <p>This is a reply</p>
             </div>
         );
     }
@@ -27,14 +27,12 @@ class CommentItem extends Component {
                 </div>
                 <div className="comment-header left">Posted by: { this.props.name }</div>
                 <div className="comment-header right">{dateString} { timeString }</div>
-                <br />
-                <hr />
-                <p><i>{ this.props.comment }</i></p>
-
+                <br /><hr /><br />
+                <p className="left"><i>{ this.props.comment }</i></p>
+                <br /><br />
                 <ReplyItem comment={ this.props.comment } />
-
                 <div><textarea id={ this.props.id } className="form-control animated fadeIn" cols="10" rows="2" placeholder="Write a comment..." /></div>
-                <div><button onClick={ () => this.onClick(this) } className="btn btn-primary btn-sm pull-right" >Reply</button></div>
+                <div><button onClick={ () => this.onClick(this) } className="btn btn-primary btn-sm" >Reply</button></div>
             </div>
         );
     }

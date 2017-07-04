@@ -107,7 +107,7 @@
   top: 10px;
   float: left;
   margin: 0;
-  width: 10%;
+  width: 8%;
   margin-right: 15px;
   border-radius: 180px;
 }
@@ -383,8 +383,17 @@ element.style {
   display: none;
 }
 
+.comment-reply{
+  width: 95%;
+  background-color: #EFEFEF;
+  border-radius: 3px;
+  padding: 3px;
+  font-family: Roboto;
+}
+
 .recommend{
   margin-top: 20px;
   font-family: Roboto;
   float: right;
+  margin-bottom: 5px;
 }
