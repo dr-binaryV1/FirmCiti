@@ -7,6 +7,7 @@ import Rating from 'react-rating';
 
 import { fetchRestaurantDetail, fetchRestaurantComments, postRestaurantComment } from '../../actions';
 import Recommend from '../recommend/recommendIndex';
+import { CommentItem } from '../commentItem';
 import MenuItem from './restaurantMenuItem';
 
 class RestaurantDetail extends Component{
@@ -14,6 +15,12 @@ class RestaurantDetail extends Component{
         const { id } = this.props.match.params;
         this.props.fetchRestaurantDetail(id);
         this.props.fetchRestaurantComments(id);
+    }
+
+    componentDidUpdate(){
+        const { id } = this.props.match.params;
+        const { restaurant } = this.props;
+        this.renderComment(restaurant);
     }
 
     onSubmit(values){
@@ -36,7 +43,11 @@ class RestaurantDetail extends Component{
         if(restaurant.comments.length > 0){
             return _.map(restaurant.comments, comment => {
                 return(
-                    <p key={ comment._id }> { comment.comment } </p>
+                    <CommentItem 
+                        name={ comment.name }
+                        comment={ comment.comment }
+                        date={ comment.createdAt }
+                        key={ comment._id } />
                 );
             }); 
         }
@@ -113,7 +124,8 @@ class RestaurantDetail extends Component{
                             <p>Open Hours: { `${restaurant.openTime}AM - ${restaurant.closeTime}PM` } </p>
                             
                             <h5>Rate { restaurant.name }? </h5>
-                            <Rating />
+                            <Rating
+                                initialRate={ restaurant.rating } />
                         </div>
                     </div>
                     <div className="restaurant-menu">
@@ -124,7 +136,7 @@ class RestaurantDetail extends Component{
                     <div className="restaurant-comment">
                         <h4>Comments</h4>
                         <hr className="line-brightPink-left-sm" />
-                        { this.renderComment(restaurant) }
+                        <div id="comment">{ this.renderComment(restaurant) }</div>
                         <hr />
                         <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                             <Field

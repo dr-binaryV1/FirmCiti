@@ -23,6 +23,7 @@ class Restaurant extends Component{
                     OpenClose = { `${restaurant.openTime}AM - ${restaurant.closeTime}PM`}
                     Id = { restaurant._id }
                     Img = "src/static/images/noImage.jpg"
+                    rate = { restaurant.rating }
                     key = { restaurant._id } />
             );
         });
@@ -50,7 +51,7 @@ class Restaurant extends Component{
                 </div>
 
                 <div className="recommend animated fadeIn">
-                    <Recommend type="Restaurant" />
+                    <Recommend type="Restaurant" item={this.props.restaurants}/>
                 </div>
             </div>
         );
