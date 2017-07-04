@@ -90,6 +90,7 @@ class RestaurantDetail extends Component{
         }
     }
     
+    
     render(){
         const { restaurant, handleSubmit } = this.props;
 
