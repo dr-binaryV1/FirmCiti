@@ -5,7 +5,7 @@ export const EventItem = (props) => {
     var Admission;
 
     if(props.Admission === "0"){
-         Admission = "FREE";
+         Admission = "FREE!";
     } else {
         Admission = `$${props.Admission}`;
     }
@@ -20,7 +20,7 @@ export const EventItem = (props) => {
                     <hr className="line-brightPink-left-sm" />
                     <p> Address: { props.Address } </p>
                     <p> { props.Date } starting { props.Time } </p>                    
-                    <p> Admission: { Admission } </p>
+                    <h5 className="admission"> { Admission } </h5>
                     <Link to={ `/events/${props.Id}` } className="blue-links">View Details</Link>
                 </div>
             </div>

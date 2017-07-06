@@ -20,7 +20,7 @@ class Event extends Component {
                     Date={ event.date }
                     Admission={ event.admission }
                     Tel={ event.tel }
-                    Img = "src/static/images/noImage.jpg"
+                    Img = "src/static/images/Upcoming-Events.jpg"
                     Address={ event.address } />
             )
         });
