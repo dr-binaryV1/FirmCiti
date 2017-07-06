@@ -8,8 +8,10 @@ import promise from 'redux-promise';
 import reducers from './reducers';
 import JusBussIndex from './components/home/jusBussIndex';
 import Restaurant from './components/restaurants/restaurantIndex';
+import University from './components/universities/universityIndex';
 import RestaurantDetails from './components/restaurants/restaurantDetails';
 import House from './components/houses/houseIndex';
+import Event from './components/events/eventIndex';
 import Header from './components/header';
 import { Footer } from './components/footer';
 import Auth from './components/auth/authorize';
@@ -25,8 +27,10 @@ ReactDOM.render(
           <Switch>
             <Route path="/restaurants/:id" component={RestaurantDetails} />
             <Route path="/restaurants" component={Restaurant} />
+            <Route path="/universities" component={University} />
             <Route path="/authorize" component={Auth} />
             <Route path="/houses" component={House} />
+            <Route path="/events" component={Event} />
             <Route path="/" component={JusBussIndex} />
           </Switch>
         </div>

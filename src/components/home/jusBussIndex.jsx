@@ -1,14 +1,11 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Title, { flushTitle } from 'react-title-component';
 
-import { fetchUniverisity } from '../../actions';
 import LobbyItem from './jusBussLobbyItem';
 
 class JusBussIndex extends Component {
     componentDidMount(){
-        this.props.fetchUniverisity();
         <Title render="JusBuss"/>
     }
 
@@ -30,7 +27,7 @@ class JusBussIndex extends Component {
                     Desc="View Universities in your area. Check out locations and chill spots on campus and more." 
                     img="src/static/images/utech.jpg"
                     alt="University Image" 
-                    url="#" />
+                    url="/universities" />
 
                 <LobbyItem 
                     Name="Restaurants" 
@@ -51,14 +48,10 @@ class JusBussIndex extends Component {
                     Desc="View upcoming events in your location, bookmark and add these events to your calendar." 
                     img="src/static/images/Upcoming-Events.jpg"
                     alt="Events Image"
-                    url="#" />
+                    url="/events" />
             </div>
         );
     }
 }
 
-function mapStateToProps(state){
-    return { university: state.university }
-}
-
-export default connect(mapStateToProps, { fetchUniverisity })(JusBussIndex);
+export default JusBussIndex;

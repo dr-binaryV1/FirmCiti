@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const FETCH_EVENTS = "fecth_events";
+export const FETCH_HOUSES = "fetch_houses";
 export const FETCH_UNIVERSITY = "fetch_university";
 export const FETCH_RESTAURANTS = "fetch_restaurants";
 export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
@@ -9,6 +11,24 @@ export const LOGIN = "login";
 export const SIGNUP = "signup";
 
 const ROOT_URL = 'http://jusbuss.herokuapp.com';
+
+export function fetchEvents(){
+    const request = axios.get(`${ROOT_URL}/entertainment`);
+
+    return {
+        type: FETCH_EVENTS,
+        payload: request
+    }
+}
+
+export function fetchHouses(){
+    const request = axios.get(`${ROOT_URL}/rentals`);
+
+    return {
+        type: FETCH_HOUSES,
+        payload: request
+    }
+}
 
 export function fetchUniverisity(){
     const request = axios.get(`${ROOT_URL}/university`);
