@@ -36,7 +36,7 @@ class Header extends Component{
                   </div>
                   <div className="navBarContainer">
                     <Link to="/" className="nav-item">Home</Link>
-                    <Link to="/#" className="nav-item">Events</Link> 
+                    <Link to="/events" className="nav-item">Events</Link> 
                     <Link to="/houses" className="nav-item">Houses</Link>
                     <Link to="/restaurants" className="nav-item">Restaurants</Link>
                   </div>
