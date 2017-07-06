@@ -5,7 +5,7 @@ export const EventItem = (props) => {
     var Admission;
 
     if(props.Admission === "0"){
-         Admission = "FREE!";
+         Admission = "FREE";
     } else {
         Admission = `$${props.Admission}`;
     }
@@ -16,7 +16,7 @@ export const EventItem = (props) => {
                 <img className="profile-picture" src={ props.Img } alt={ props.Alt } />
             
                 <div className="information">
-                    <h4> { props.Name }</h4>
+                    <h5> { props.Name }</h5>
                     <hr className="line-brightPink-left-sm" />
                     <p> Address: { props.Address } </p>
                     <p> { props.Date } starting { props.Time } </p>                    

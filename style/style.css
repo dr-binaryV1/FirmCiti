@@ -239,7 +239,8 @@ form a {
 }
 
 .eventItem{
-  width: 350px;
+  padding: 5px;
+  width: 360px;
   height: 210px;
   float: left;
   margin-right: 15px;
@@ -296,7 +297,7 @@ hr.line-orange-center {
 
 hr.line-brightPink-left {
         border: 0;
-        height: 3px;
+        height: 1.5px;
         background-color: #ED2F55;
         width: 160px;
         margin-left: 0px;
@@ -304,7 +305,7 @@ hr.line-brightPink-left {
 
 hr.line-brightPink-left-sm {
         border: 0;
-        height: 3px;
+        height: 1.5px;
         background-color: #ED2F55;
         width: 100px;
         margin-left: 0px;
