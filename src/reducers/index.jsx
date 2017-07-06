@@ -12,7 +12,7 @@ import SignupReducer from './reducer_signup';
 const rootReducer = combineReducers({
   events: EventReducer,
   houses: HouseReducer,
-  university: UniversityReducer,
+  universities: UniversityReducer,
   restaurants: RestaurantReducer,
   loginStatus: LoginReducer,
   signupStatus: SignupReducer,
