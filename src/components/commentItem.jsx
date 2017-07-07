@@ -1,20 +1,6 @@
 import React, { Component } from 'react';
 
-class ReplyItem extends Component{
-    render(){
-        return(
-            <div className="comment-reply right">
-                This is a reply
-            </div>
-        );
-    }
-}
-
 class CommentItem extends Component {
-    onClick(reply){
-        document.getElementById(reply.props.id).style.display = "block";
-    }
-
     render(){
         const date = new Date(this.props.date);
         const timeString = date.toLocaleTimeString();
@@ -30,9 +16,6 @@ class CommentItem extends Component {
                 <br /><hr /><br />
                 <p className="left"><i>{ this.props.comment }</i></p>
                 <br /><br />
-                <ReplyItem comment={ this.props.comment } />
-                <div><textarea id={ this.props.id } className="form-control animated fadeIn" cols="10" rows="2" placeholder="Write a comment..." /></div>
-                <div><button onClick={ () => this.onClick(this) } className="btn btn-primary btn-sm" >Reply</button></div>
             </div>
         );
     }
