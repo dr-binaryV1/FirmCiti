@@ -60,6 +60,7 @@
   margin-top: 20px;
   width: 60%;
   font-family: Roboto;
+  font-size: 14px;
 }
 
 .lobby-item{
@@ -164,7 +165,7 @@
   text-decoration: none;
 }
 
-.login{
+in{
   margin-right: 10px;
 }
 
@@ -205,6 +206,7 @@ form a {
 .AuthContainer{
   margin-top: 20px;
   font-family: Roboto;
+  font-size: 14px;
 }
 
 .AuthContainer h2 {
