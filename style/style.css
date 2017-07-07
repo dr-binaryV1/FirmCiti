@@ -445,6 +445,7 @@ element.style {
   border-radius: 3px;
   padding: 10px;
   font-family: Roboto;
+  font-size: 14px;
 }
 
 .sidebar-info h5{
