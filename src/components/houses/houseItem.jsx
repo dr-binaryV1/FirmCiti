@@ -14,7 +14,7 @@ const HouseItem = (props) => {
                     <p> Tel: { props.tel } </p>
                     <span> <h5 className="rent">Rent: ${ props.price }</h5>
                         Status: {props.status}</span>
-                    <Link to={ `/rentals/${props.Id}` } className="blue-links">View Details</Link>
+                    <Link to={ `/houses/${props.id}` } className="blue-links">View Details</Link>
                 </div>
             </div>
         </div>
