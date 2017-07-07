@@ -112,6 +112,10 @@
   border-radius: 180px;
 }
 
+.review-form{
+  display: none;
+}
+
 .DisplayImageContainer{
   margin-right: 15px;
   height: 30%;

@@ -96,7 +96,7 @@ class RestaurantDetail extends Component{
         if(!restaurant){
             return (
                 <div className="Container  animated fadeIn">
-                    <Link className="btn btn-primary" to="/restaurants">Back to Restaurants</Link>
+                    <Link className="btn btn-primary btn-sm" to="/restaurants">Restaurants</Link>
                     <h4>Loading...</h4>
                 </div>
             );
@@ -105,7 +105,7 @@ class RestaurantDetail extends Component{
         return(
             <div>
                 <div className="Container  animated fadeIn">
-                    <Link className="btn btn-primary" to="/restaurants">Back to Restaurants</Link>
+                    <Link className="btn btn-primary btn-sm" to="/restaurants">Restaurants</Link>
                     <div className="left">
                         <div className="DisplayImageContainer">
                             <img className="profile-picture" src="../src/static/images/noImage.jpg" alt="profile picture" />
@@ -129,11 +129,11 @@ class RestaurantDetail extends Component{
                         { this.renderMenu(restaurant) }
                     </div>
                     <div className="restaurant-comment">
-                        <h4>Comments</h4>
+                        <h4>Reviews</h4>
                         <hr className="line-brightPink-left-sm" />
                         { this.renderComment(restaurant) }
                         <hr />
-                        <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
+                        <form className="review-form" onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                             <Field
                                 label="Name:"
                                 name="name"
