@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class SideBar extends Component{
     writeReview(){
-        if(this.props.loginStatus !== true){
+        if(this.props.loginStatus !== "success"){
             this.props.history.push('/authorize');
         }
     }
@@ -17,12 +17,12 @@ class SideBar extends Component{
                     <button className="btn btn-primary" onClick={ this.writeReview.bind(this) }>Write a Review</button>
                 </div>
             );
-        }
-
-        if(!id){
+        }else{
             return(
-                <div>
-
+                <div className="sidebar-info">
+                    <h5>Not here? Tell us what we're missing.</h5>
+                    <p>If the business you're looking for isn't here, add it!</p>
+                    <Link className="btn btn-primary" to="#">Add a Business</Link>
                 </div>
             );
         }

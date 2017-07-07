@@ -440,6 +440,17 @@ element.style {
   border: 1px solid #EFEFEF;
 }
 
+.sidebar-info{
+  background-color: #E5E5E5;
+  border-radius: 3px;
+  padding: 10px;
+  font-family: Roboto;
+}
+
+.sidebar-info h5{
+  color: #A0001D;
+}
+
 .recommend{
   margin-top: 20px;
   font-family: Roboto;
