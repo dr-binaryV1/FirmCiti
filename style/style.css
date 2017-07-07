@@ -250,6 +250,18 @@ form a {
   border-radius: 5px;
 }
 
+.universityItem{
+  padding: 5px;
+  width: 380px;
+  height: 210px;
+  float: left;
+  margin-right: 15px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
 .admission {
   color: green;
   font-weight: bold;

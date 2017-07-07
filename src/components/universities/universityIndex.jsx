@@ -11,19 +11,26 @@ class University extends Component{
     }
 
     renderUniverity(){
-        console.log('here');
         return _.map(this.props.universities, university => {
             return(
                 <UniversityItem
                     key={ university._id }
-                    name={ university.name } />
+                    Img = "src/static/images/utech.jpg"
+                    id={ university._id }
+                    name={ university.name }
+                    desc={ university.description }
+                    address={ university.address }
+                    tel={ university.tel } />
             );
         });
     }
 
     render(){
         return(
-            <div>
+            <div className="Container animated fadeIn">
+                <h3>Universities</h3>
+                <hr className="line-brightPink-left" />
+
                 { this.renderUniverity() }
             </div>
         );
