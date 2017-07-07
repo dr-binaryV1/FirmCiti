@@ -13,7 +13,8 @@ import MenuItem from './restaurantMenuItem';
 class RestaurantDetail extends Component{
     componentDidMount(){
         const { id } = this.props.match.params;
-        window.setInterval(() => this.props.fetchRestaurantDetail(id), 1000); 
+        //window.setInterval(() => this.props.fetchRestaurantDetail(id), 1000);
+        this.props.fetchRestaurantDetail(id); 
     }
 
     onSubmit(values){
@@ -155,7 +156,7 @@ class RestaurantDetail extends Component{
                 </div>
 
                 <div className="recommend animated fadeIn">
-                   <SideBar />
+                   <SideBar loginStatus={ this.props.loginStatus }/>
                 </div>
             </div>
         );
@@ -164,7 +165,7 @@ class RestaurantDetail extends Component{
 
 function validate(values){
     const errors = {};
-
+    
     if(!values.name || values.name.length < 3){
         errors.name = "Enter a valid name thats atleast 3 characters.";
     }
@@ -180,8 +181,11 @@ function validate(values){
     return errors;
 }
 
-function mapStateToProps({ restaurants }, ownProps) {
-    return { restaurant: restaurants[ownProps.match.params.id] }
+function mapStateToProps(state, ownProps) {
+    return { 
+        restaurant: state.restaurants[ownProps.match.params.id],
+        loginStatus: state.loginStatus 
+    }
 }
 
 export default reduxForm({
