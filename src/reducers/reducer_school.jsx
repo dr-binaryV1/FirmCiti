@@ -1,9 +1,9 @@
 import _ from 'lodash';
-import { FETCH_UNIVERSITY } from '../actions';
+import { FETCH_SCHOOL } from '../actions';
 
 export default function(state = {}, action){
     switch(action.type){
-        case FETCH_UNIVERSITY:
+        case FETCH_SCHOOL:
             return _.mapKeys(action.payload.data, '_id');
         default:
             return state;

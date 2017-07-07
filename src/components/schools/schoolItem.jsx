@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const UniversityItem = (props) => {
+const SchoolItem = (props) => {
     return (
         <div className="universityItem" key={ props.key }>
             <div className="DisplayImageContainer">
@@ -12,11 +12,11 @@ const UniversityItem = (props) => {
                     <p> { props.desc } </p>
                     <p> Address: { props.address } </p>
                     <p> Tel: { props.tel } </p>
-                    <Link to={ `/universities/${props.id}` } className="blue-links">View Details</Link>
+                    <Link to={ `/schools/${props.id}` } className="blue-links">View Details</Link>
                 </div>
             </div>
         </div>
     );
 };
 
-export default UniversityItem;
+export default SchoolItem;

@@ -9,25 +9,15 @@ class JusBussIndex extends Component {
         <Title render="JusBuss"/>
     }
 
-    renderUniversity(){
-        return _.map(this.props.university, university => {
-            return(
-                <li key={university._id}>
-                    { university.name }
-                </li>
-            );
-        });
-    }
-
     render(){
         return(
             <div className="Container  animated fadeIn">
                 <LobbyItem 
-                    Name="Universities" 
+                    Name="Schools/Universities" 
                     Desc="View Universities in your area. Check out locations and chill spots on campus and more." 
                     img="src/static/images/utech.jpg"
                     alt="University Image" 
-                    url="/universities" />
+                    url="/schools" />
 
                 <LobbyItem 
                     Name="Restaurants" 

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const FETCH_EVENTS = "fecth_events";
 export const FETCH_HOUSES = "fetch_houses";
-export const FETCH_UNIVERSITY = "fetch_university";
+export const FETCH_SCHOOL = "fetch_school";
 export const FETCH_RESTAURANTS = "fetch_restaurants";
 export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
 export const FETCH_RESTAURANT_COMMENTS = "fetch_restaurant_comments";
@@ -30,11 +30,11 @@ export function fetchHouses(){
     }
 }
 
-export function fetchUniverisity(){
+export function fetchSchool(){
     const request = axios.get(`${ROOT_URL}/university`);
 
     return  {
-        type: FETCH_UNIVERSITY,
+        type: FETCH_SCHOOL,
         payload: request
     };
 }
