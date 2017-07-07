@@ -12,7 +12,7 @@ const HouseItem = (props) => {
                     <hr className="line-brightPink-left-sm" />
                     <p> { props.address } </p>
                     <p> Tel: { props.tel } </p>
-                    <span> <h5 className="rent">Rent: ${ props.price }</h5>
+                    <span><h5 className="rent"> ${ props.price }</h5>
                         Status: {props.status}</span>
                     <Link to={ `/houses/${props.id}` } className="blue-links">View Details</Link>
                 </div>

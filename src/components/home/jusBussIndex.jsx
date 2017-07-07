@@ -37,7 +37,7 @@ class JusBussIndex extends Component {
                     url="/restaurants" />
 
                 <LobbyItem 
-                    Name="Houses for Rent" 
+                    Name="Rooms for Rent" 
                     Desc="an agreement where a payment is made for the temporary use of a good, service..." 
                     img="src/static/images/rentHouse.jpg"
                     alt="House for rent Image"

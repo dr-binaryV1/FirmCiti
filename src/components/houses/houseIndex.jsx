@@ -18,7 +18,7 @@ class House extends Component {
                 <HouseItem
                     key={ house._id }
                     id={ house._id }
-                    Img= "src/static/images/noImage.jpg"
+                    Img= "src/static/images/rentHouse.jpg"
                     name={ `${house.first_name} ${house.last_name}` }
                     gender={ house.tenant_gender }
                     price={ house.price }
@@ -32,7 +32,7 @@ class House extends Component {
   render(){
     return(
       <div className="Container animated fadeIn">
-        <h3>Houses for Rent</h3>
+        <h3>Rooms for Rent</h3>
         <hr className="line-brightPink-left" />
 
         { this.renderUniversities() }

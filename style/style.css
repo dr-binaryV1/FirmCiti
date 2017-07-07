@@ -93,7 +93,7 @@
 .profile-picture{
   position: relative;
   left: 2px;
-  top: 10px;
+ 
   float: left;
   margin: 0;
   width: 30%;
@@ -114,7 +114,7 @@
 
 .DisplayImageContainer{
   margin-right: 15px;
-  height: 100%;
+  height: 30%;
 }
 
 .item-info{
