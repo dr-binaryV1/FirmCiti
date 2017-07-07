@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { fetchSchool } from '../../actions';
 import SchoolItem from './schoolItem';
+import SideBar from '../sidebar/sidebar';
 
 class School extends Component{
     componentDidMount(){
@@ -27,11 +28,16 @@ class School extends Component{
 
     render(){
         return(
-            <div className="Container animated fadeIn">
-                <h3>Schools/Universities</h3>
-                <hr className="line-brightPink-left" />
+            <div>
+                <div className="Container animated fadeIn">
+                    <h3>Schools/Universities</h3>
+                    <hr className="line-brightPink-left" />
 
-                { this.renderSchools() }
+                    { this.renderSchools() }
+                </div>
+                <div className="recommend animated fadeIn">
+                    <SideBar loginStatus={ this.props.loginStatus }/>
+                </div>
             </div>
         );
     }

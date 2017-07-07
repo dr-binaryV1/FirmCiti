@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchEvents } from '../../actions';
 import { EventItem } from './eventItem';
+import SideBar from '../sidebar/sidebar';
 
 class Event extends Component {
     componentDidMount(){
@@ -28,11 +29,16 @@ class Event extends Component {
 
     render(){
         return (
-            <div className="Container animated fadeIn">
-                <h3>Events</h3>
-                <hr className="line-brightPink-left" />
+            <div>
+                <div className="Container animated fadeIn">
+                    <h3>Events</h3>
+                    <hr className="line-brightPink-left" />
 
-                { this.renderEvents() }
+                    { this.renderEvents() }
+                </div>
+                <div className="recommend animated fadeIn">
+                    <SideBar loginStatus={ this.props.loginStatus }/>
+                </div>
             </div>
         );
     }

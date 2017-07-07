@@ -4,6 +4,7 @@ import Title, { flushTitle } from 'react-title-component';
 
 import { fetchHouses } from '../../actions';
 import HouseItem from './houseItem';
+import SideBar from '../sidebar/sidebar';
 
 class House extends Component {
   componentDidMount(){
@@ -30,11 +31,16 @@ class House extends Component {
 
   render(){
     return(
-      <div className="Container animated fadeIn">
-        <h3>Rooms for Rent</h3>
-        <hr className="line-brightPink-left" />
+      <div>
+        <div className="Container animated fadeIn">
+          <h3>Rooms for Rent</h3>
+          <hr className="line-brightPink-left" />
 
-        { this.renderUniversities() }
+          { this.renderUniversities() }
+        </div>
+        <div className="recommend animated fadeIn">
+            <SideBar loginStatus={ this.props.loginStatus }/>
+        </div>
       </div>
     );
   }
