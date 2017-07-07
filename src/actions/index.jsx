@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const FETCH_EVENTS = "fecth_events";
 export const FETCH_HOUSES = "fetch_houses";
+export const FETCH_HOUSE = "fetch_house";
 export const FETCH_SCHOOL = "fetch_school";
 export const FETCH_RESTAURANTS = "fetch_restaurants";
 export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
@@ -26,6 +27,15 @@ export function fetchHouses(){
 
     return {
         type: FETCH_HOUSES,
+        payload: request
+    }
+}
+
+export function fetchHouse(id){
+    const request = axios.get(`${ROOT_URL}/rentals/${id}`);
+
+    return {
+        type: FETCH_HOUSE,
         payload: request
     }
 }
