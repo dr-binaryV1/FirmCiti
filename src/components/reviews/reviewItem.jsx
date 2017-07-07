@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CommentItem extends Component {
+class ReviewItem extends Component {
     render(){
         const date = new Date(this.props.date);
         const timeString = date.toLocaleTimeString();
@@ -21,4 +21,4 @@ class CommentItem extends Component {
     }
 }
 
-export default CommentItem;
+export default ReviewItem;

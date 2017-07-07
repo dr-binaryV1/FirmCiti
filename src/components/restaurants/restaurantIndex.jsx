@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { fetchRestaurants } from '../../actions';
 import RestaurantItem from './restaurantItem';
-import Recommend from '../recommend/recommendIndex';
+import Map from '../sidebar/map';
 
 class Restaurant extends Component{
     componentDidMount(){
@@ -51,7 +51,7 @@ class Restaurant extends Component{
                 </div>
 
                 <div className="recommend animated fadeIn">
-                    <Recommend type="Restaurant" item={this.props.restaurants}/>
+                    <Map type="Restaurant" item={this.props.restaurants}/>
                 </div>
             </div>
         );

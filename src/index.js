@@ -13,8 +13,8 @@ import RestaurantDetails from './components/restaurants/restaurantDetails';
 import House from './components/houses/houseIndex';
 import HouseDetails from './components/houses/houseDetails';
 import Event from './components/events/eventIndex';
-import Header from './components/header';
-import { Footer } from './components/footer';
+import Header from './components/includes/header';
+import { Footer } from './components/includes/footer';
 import Auth from './components/auth/authorize';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);

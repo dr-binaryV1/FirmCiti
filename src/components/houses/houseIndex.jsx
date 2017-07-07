@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Title, { flushTitle } from 'react-title-component';
 
-import Construction from '../construction';
 import { fetchHouses } from '../../actions';
 import HouseItem from './houseItem';
 

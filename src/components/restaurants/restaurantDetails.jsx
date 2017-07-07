@@ -6,8 +6,8 @@ import { Link, withRouter } from 'react-router-dom';
 import Rating from 'react-rating';
 
 import { fetchRestaurantDetail, fetchRestaurantComments, postRestaurantComment } from '../../actions';
-import Recommend from '../recommend/recommendIndex';
-import CommentItem from '../commentItem';
+import SideBar from '../sidebar/sidebar';
+import ReviewItem from '../reviews/reviewItem';
 import MenuItem from './restaurantMenuItem';
 
 class RestaurantDetail extends Component{
@@ -36,7 +36,7 @@ class RestaurantDetail extends Component{
         if(restaurant.comments.length > 0){
             return _.map(restaurant.comments, comment => {
                 return(
-                    <CommentItem 
+                    <ReviewItem 
                         name={ comment.name }
                         comment={ comment.comment }
                         date={ comment.createdAt }
@@ -96,7 +96,6 @@ class RestaurantDetail extends Component{
         if(!restaurant){
             return (
                 <div className="Container  animated fadeIn">
-                    <Link className="btn btn-primary btn-sm" to="/restaurants">Restaurants</Link>
                     <h4>Loading...</h4>
                 </div>
             );
@@ -105,7 +104,6 @@ class RestaurantDetail extends Component{
         return(
             <div>
                 <div className="Container  animated fadeIn">
-                    <Link className="btn btn-primary btn-sm" to="/restaurants">Restaurants</Link>
                     <div className="left">
                         <div className="DisplayImageContainer">
                             <img className="profile-picture" src="../src/static/images/noImage.jpg" alt="profile picture" />
@@ -113,14 +111,12 @@ class RestaurantDetail extends Component{
                         <div className="information">
                             <h2>{ restaurant.name }</h2>
                             <hr className="line-brightPink-left" />
+                            <Rating
+                                initialRate={ restaurant.rating } />
                             <p>{ restaurant.description }</p>
                             <p>Address: { restaurant.address } </p>
                             <p>Telephone: { restaurant.tel } </p>
                             <p>Open Hours: { `${restaurant.openTime}AM - ${restaurant.closeTime}PM` } </p>
-                            
-                            <h5>Rate { restaurant.name }? </h5>
-                            <Rating
-                                initialRate={ restaurant.rating } />
                         </div>
                     </div>
                     <div className="restaurant-menu">
@@ -159,7 +155,7 @@ class RestaurantDetail extends Component{
                 </div>
 
                 <div className="recommend animated fadeIn">
-                    <Recommend type="Menu" />
+                   <SideBar />
                 </div>
             </div>
         );
