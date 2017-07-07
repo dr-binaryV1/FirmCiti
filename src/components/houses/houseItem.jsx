@@ -12,7 +12,8 @@ const HouseItem = (props) => {
                     <hr className="line-brightPink-left-sm" />
                     <p> { props.address } </p>
                     <p> Tel: { props.tel } </p>
-                    <p> <span className="rent">${ props.price }</span> / {props.status}</p>
+                    <span> <h5 className="rent">Rent: ${ props.price }</h5>
+                        Status: {props.status}</span>
                     <Link to={ `/rentals/${props.Id}` } className="blue-links">View Details</Link>
                 </div>
             </div>
