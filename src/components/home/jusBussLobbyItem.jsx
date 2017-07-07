@@ -11,7 +11,7 @@ const LobbyItem = (props) => {
             </div>
             <div className="information">
                 <p>{props.Desc}</p>
-
+                <br />
                 <Link className="blue-links" to={props.url}>View Category</Link>
             </div>
         </div>

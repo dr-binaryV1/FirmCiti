@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+p { 
+    margin: 0;
+    padding: 0;
+}
+
 .header{
   width: 100vw;
   height: 70px;
@@ -235,7 +240,7 @@ form a {
 
 .restaurantItem{
   width: 350px;
-  height: 150px;
+  height: 120px;
   float: left;
   margin-right: 15px;
   background: #FFFFFF;
@@ -247,7 +252,7 @@ form a {
 .eventItem{
   padding: 5px;
   width: 360px;
-  height: 210px;
+  height: 160px;
   float: left;
   margin-right: 15px;
   background: #FFFFFF;
@@ -276,7 +281,7 @@ form a {
 .houseItem{
   padding: 5px;
   width: 360px;
-  height: 230px;
+  height: 180px;
   float: left;
   margin-right: 15px;
   background: #FFFFFF;
@@ -308,6 +313,11 @@ form a {
 .information a{
   float: right;
   margin-right: 5px;
+}
+
+.information p{
+  margin: 0;
+  padding: 0;
 }
 
 
