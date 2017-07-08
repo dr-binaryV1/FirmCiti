@@ -14,7 +14,9 @@ class SideBar extends Component{
         if(id){
             return(
                 <div className="animated fadeIn">
-                    <button className="btn btn-primary" onClick={ this.writeReview.bind(this) }>Write a Review</button>
+                    <button className="btn btn-primary reviewButton" onClick={ this.writeReview.bind(this) }>Write a Review</button>
+                    <button className="btn btn-sm btn-default">Add Photo</button>
+                    <button className="btn btn-sm btn-default">Share</button>
                 </div>
             );
         }else{

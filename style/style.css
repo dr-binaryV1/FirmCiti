@@ -482,3 +482,7 @@ element.style {
   padding: 15px;
   display: none;
 }
+
+.reviewButton{
+  margin-right: 10px;
+}
