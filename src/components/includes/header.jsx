@@ -9,9 +9,14 @@ class Header extends Component{
     }
 
     isLoggedIn(){
-      if(this.props.loginStatus === true){
+      if(this.props.loginStatus.message === true){
+        const { user } = this.props.loginStatus;
         return (
-          <p className="loggedInGreeting">Welcome Sir!</p>
+          <div className="authHeader">
+            <p className="loggedInGreeting">Welcome {user.username}!</p>
+            <Link to="#" className="right">Sign Out</Link>
+          </div>
+          
         )
       } else {
           return(

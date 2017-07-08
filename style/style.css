@@ -494,6 +494,11 @@ element.style {
     top: 45vh;
 }
 
+.authHeader p, authHeader a{
+    margin: 0;
+    padding: 0;
+}
+
 @keyframes lds-square {
   0%, 80%, 100% {
     animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
