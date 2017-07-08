@@ -36,6 +36,7 @@ class LogIn extends Component{
         }
         else if(this.props.loginStatus === false){
             document.getElementById("response").innerHTML="Log in failed, please check email and password.";
+            document.getElementById("response").style.display = "block";
             window.setTimeout(() => {
                 this.checkLoginStatus();
             }, 100 
@@ -73,7 +74,7 @@ class LogIn extends Component{
                     <Link to="/" className="btn btn-danger">Cancel</Link>
                 </form>
 
-                <p id="response" className="has-danger"></p>
+                <p id="response" className="loginFailed"></p>
             </div>
         );
     }
