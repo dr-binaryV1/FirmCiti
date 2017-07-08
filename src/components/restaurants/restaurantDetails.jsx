@@ -9,6 +9,7 @@ import { fetchRestaurantDetail, fetchRestaurantComments, postRestaurantComment }
 import SideBar from '../sidebar/sidebar';
 import ReviewItem from '../reviews/reviewItem';
 import MenuItem from './restaurantMenuItem';
+import { Loader } from '../includes/loader';
 
 class RestaurantDetail extends Component{
     componentDidMount(){
@@ -97,7 +98,7 @@ class RestaurantDetail extends Component{
         if(!restaurant){
             return (
                 <div className="Container  animated fadeIn">
-                    <h4>Loading...</h4>
+                    <Loader />
                 </div>
             );
         }

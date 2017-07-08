@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import Title, { flushTitle } from 'react-title-component';
 import { connect } from 'react-redux';
 
@@ -6,6 +7,7 @@ import { fetchRestaurants } from '../../actions';
 import RestaurantItem from './restaurantItem';
 import Map from '../sidebar/map';
 import SideBar from '../sidebar/sidebar'
+import { Loader } from '../includes/loader';
 
 class Restaurant extends Component{
     componentDidMount(){
@@ -14,6 +16,12 @@ class Restaurant extends Component{
     }
 
     renderRestaurants(){
+         var isEmpty = _.isEmpty(this.props.restaurants);
+        if(isEmpty){
+            <div className="Container animated fadeIn">
+                <Loader />
+            </div>
+        }
         return _.map(this.props.restaurants, restaurant => {
             return (
                 <RestaurantItem

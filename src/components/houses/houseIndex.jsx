@@ -5,6 +5,7 @@ import Title, { flushTitle } from 'react-title-component';
 import { fetchHouses } from '../../actions';
 import HouseItem from './houseItem';
 import SideBar from '../sidebar/sidebar';
+import { Loader } from '../includes/loader';
 
 class House extends Component {
   componentDidMount(){
@@ -13,20 +14,25 @@ class House extends Component {
   }
 
   renderUniversities(){
-      return _.map(this.props.houses, house => {
-            return (
-                <HouseItem
-                    key={ house._id }
-                    id={ house._id }
-                    Img= "src/static/images/rentHouse.jpg"
-                    name={ `${house.first_name} ${house.last_name}` }
-                    gender={ house.tenant_gender }
-                    price={ house.price }
-                    tel={ house.phone }
-                    address={ house.address }
-                    status={ house.status } />
-            );
-      });
+      var isEmpty = _.isEmpty(this.props.houses);
+        if(isEmpty){
+            <Loader />
+        } else {
+            return _.map(this.props.houses, house => {
+                  return (
+                      <HouseItem
+                          key={ house._id }
+                          id={ house._id }
+                          Img= "src/static/images/rentHouse.jpg"
+                          name={ `${house.first_name} ${house.last_name}` }
+                          gender={ house.tenant_gender }
+                          price={ house.price }
+                          tel={ house.phone }
+                          address={ house.address }
+                          status={ house.status } />
+                  );
+            });
+        }
   }
 
   render(){
@@ -47,7 +53,10 @@ class House extends Component {
 }
 
 function mapStateToProps(state){
-    return { houses: state.houses }
+    return {
+      houses: state.houses,
+      loginStatus: state.loginStatus
+    }
 }
 
 export default connect(mapStateToProps, { fetchHouses })(House);

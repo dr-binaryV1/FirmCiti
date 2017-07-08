@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import { login } from '../../actions';
 
 class LogIn extends Component{
@@ -24,25 +25,30 @@ class LogIn extends Component{
     }
 
     onSubmit(values){
+        this.setState({loginStatus: ''});
         this.props.login(values);
 
         this.checkLoginStatus();
     }
 
     checkLoginStatus(){
-        if(this.props.loginStatus === "success"){
+        if(this.props.loginStatus.message === true){
             this.props.history.push('/dashboard');
         }
-        else if(this.props.loginStatus === "fail"){
-            document.getElementById("response").innerHTML="Log in failed, please check email and password.";
-        }
-        else{
+        else if(this.props.loginStatus.message === false){
+            document.getElementById("loginResponse").innerHTML="Log in failed, please check email and password.";
+            document.getElementById("loginResponse").className = "error";
             window.setTimeout(() => {
                 this.checkLoginStatus();
             }, 100 
          )
         }
-    }
+        else{
+            window.setTimeout(() => {
+                this.checkLoginStatus();
+            }, 100)
+        }
+    }s
 
     render(){
         const { handleSubmit, match, location, history } = this.props;
@@ -68,7 +74,7 @@ class LogIn extends Component{
                     <Link to="/" className="btn btn-danger">Cancel</Link>
                 </form>
 
-                <p id="response" className="has-danger"></p>
+                <p id="loginResponse"></p>
             </div>
         );
     }

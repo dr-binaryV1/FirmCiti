@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import promise from 'redux-promise';
 
 import reducers from './reducers';
-import JusBussIndex from './components/home/jusBussIndex';
+import JusBussIndex from './components/home/firmCitiIndex';
 import Restaurant from './components/restaurants/restaurantIndex';
 import School from './components/schools/schoolIndex';
 import RestaurantDetails from './components/restaurants/restaurantDetails';
@@ -16,6 +16,8 @@ import Event from './components/events/eventIndex';
 import Header from './components/includes/header';
 import { Footer } from './components/includes/footer';
 import Auth from './components/auth/authorize';
+import AddBusinessAsCustomer from './components/businessForms/addBusiness_as_Customer';
+import AddBusinessAsOwner from './components/businessForms/addBusiness_as_Owner';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -26,6 +28,8 @@ ReactDOM.render(
         <div>
           <Header />
           <Switch>
+            <Route path="/add-business-customer" component={AddBusinessAsCustomer} />
+            <Route path="/add-business-owner" component={AddBusinessAsOwner} />
             <Route path="/restaurants/:id" component={RestaurantDetails} />
             <Route path="/restaurants" component={Restaurant} />
             <Route path="/schools" component={School} />

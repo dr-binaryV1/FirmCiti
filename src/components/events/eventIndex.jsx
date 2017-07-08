@@ -45,7 +45,10 @@ class Event extends Component {
 }
 
 function mapStateToProps(state){
-    return { events: state.events }
+    return {
+        events: state.events,
+        loginStatus: state.loginStatus
+    }
 }
 
 export default connect(mapStateToProps, { fetchEvents })(Event);

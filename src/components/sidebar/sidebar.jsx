@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class SideBar extends Component{
     writeReview(){
-        if(this.props.loginStatus !== "success"){
+        if(this.props.loginStatus !== true){
             this.props.history.push('/authorize');
         }
     }
@@ -14,7 +14,10 @@ class SideBar extends Component{
         if(id){
             return(
                 <div className="animated fadeIn">
-                    <button className="btn btn-primary" onClick={ this.writeReview.bind(this) }>Write a Review</button>
+                    <button 
+                        className="btn btn-primary sidebarButton" onClick={ this.writeReview.bind(this) }>Write a Review</button>
+                    <button className="btn btn-sm btn-default sidebarButton">Add Photo</button>
+                    <button className="btn btn-sm btn-default sidebarButton">Share</button>
                 </div>
             );
         }else{
@@ -22,7 +25,12 @@ class SideBar extends Component{
                 <div className="sidebar-info">
                     <h5>Not here? Tell us what we're missing.</h5>
                     <p>If the business you're looking for isn't here, add it!</p>
-                    <Link className="btn btn-sm btn-primary sb-btn" to="#">Add a Business</Link>
+                    <button 
+                        className="btn btn-sm btn-primary sb-btn" 
+                        data-toggle="modal" 
+                        data-target="#addBusinessModal">
+                        Add a Business
+                    </button>
                     <hr />
                     <p>Got search feedback? Help us improve.</p>
                 </div>

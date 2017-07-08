@@ -44,7 +44,10 @@ class School extends Component{
 }
 
 function mapStateToProps(state){
-    return { schools: state.schools }
+    return {
+        schools: state.schools,
+        loginStatus: state.loginStatus
+    }
 }
 
 export default connect(mapStateToProps, { fetchSchool })(School);

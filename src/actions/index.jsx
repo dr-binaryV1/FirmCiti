@@ -95,7 +95,7 @@ export function login(values){
 }
 
 export function signup(values){
-    const request = axios.post(`${ROOT_URL}/signup`, values);
+    const request = axios.post(`${ROOT_URL}/users`, values);
 
     return {
         type: SIGNUP,
