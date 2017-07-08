@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import { signup } from '../../actions';
+import { login } from '../../actions';
 
 class SignUp extends Component {
     renderField(field){
@@ -23,9 +25,25 @@ class SignUp extends Component {
         );
     }
 
+    checkSignupStatus(){
+        if(this.props.signupStatus === true){
+            document.getElementById("signUpResponse").innerHTML="Account Successfully created with FirmCiti. Check email to activate Account.";
+            document.getElementById("signUpResponse").className="success";
+        } else if(this.props.signupStatus === false){
+            document.getElementById("signUpResponse").innerHTML="There was an issue signing you up to the system. Please try again later.";
+            document.getElementById("signUpResponse").className="error";
+        } else{
+            window.setTimeout(() => {
+                this.checkSignupStatus();
+            }, 100)
+        }
+    }
+
     onSubmit(values){
-        //this.signup(values);
-        console.log('clicked');
+        this.props.signup(values);
+
+        this.checkSignupStatus();
+    
     }
 
     render(){
@@ -69,7 +87,7 @@ class SignUp extends Component {
 
                     <Field
                         label="Phone:"
-                        name="tel"
+                        name="phone"
                         type="phone"
                         component={ this.renderField } />
 
@@ -94,6 +112,7 @@ class SignUp extends Component {
                     <br />
                     <button type="submit" className="btn btn-primary">Sign Up</button>
                     <Link to="/" className="btn btn-danger">Cancel</Link>
+                    <p id="signUpResponse"></p>
                 </form>
             </div>
         );
@@ -119,8 +138,8 @@ function validate(values){
         errors.email = "Enter a valid email address.";
     }
 
-    if(!values.tel || values.tel.length < 7){
-        errors.tel = "Enter a valid phone #";
+    if(!values.phone || values.phone.length < 7){
+        errors.phone = "Enter a valid phone #";
     }
 
     if(!values.password || values.password.length < 5){
@@ -131,7 +150,7 @@ function validate(values){
         errors.confirm_password = "Please enter value to compare passwords.";
     }
 
-    if(values.password !== values.conform_password){
+    if(values.password !== values.confirm_password){
         errors.confirm_password = "Passwords Mismatch";
     }
 
@@ -139,12 +158,15 @@ function validate(values){
 }
 
 function mapStateToProps(state){
-    return { signupStatus: state.signupStatus }
+    return { 
+        signupStatus: state.signupStatus,
+        loginStatus: state.loginStatus
+    }
 }
 
 export default reduxForm({
     form: 'SignUpForm',
     validate
 })(
-    connect(mapStateToProps, { signup }) (SignUp)
+    connect(mapStateToProps, { signup, login }) (SignUp)
 );

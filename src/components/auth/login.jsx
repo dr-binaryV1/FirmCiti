@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+
 import { login } from '../../actions';
 
 class LogIn extends Component{
@@ -35,8 +36,8 @@ class LogIn extends Component{
             this.props.history.push('/dashboard');
         }
         else if(this.props.loginStatus.message === false){
-            document.getElementById("response").innerHTML="Log in failed, please check email and password.";
-            document.getElementById("response").style.display = "block";
+            document.getElementById("loginResponse").innerHTML="Log in failed, please check email and password.";
+            document.getElementById("loginResponse").className = "error";
             window.setTimeout(() => {
                 this.checkLoginStatus();
             }, 100 
@@ -45,10 +46,9 @@ class LogIn extends Component{
         else{
             window.setTimeout(() => {
                 this.checkLoginStatus();
-            }, 100 
-         )
+            }, 100)
         }
-    }
+    }s
 
     render(){
         const { handleSubmit, match, location, history } = this.props;
@@ -74,7 +74,7 @@ class LogIn extends Component{
                     <Link to="/" className="btn btn-danger">Cancel</Link>
                 </form>
 
-                <p id="response" className="loginFailed"></p>
+                <p id="loginResponse"></p>
             </div>
         );
     }
