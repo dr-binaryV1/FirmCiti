@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { SIGNUP } from '../actions';
 
 export default function(state = {}, action){
