@@ -22,7 +22,7 @@ class SideBar extends Component{
                 <div className="sidebar-info">
                     <h5>Not here? Tell us what we're missing.</h5>
                     <p>If the business you're looking for isn't here, add it!</p>
-                    <Link className="btn btn-sm btn-primary" to="#">Add a Business</Link>
+                    <Link className="btn btn-sm btn-primary sb-btn" to="#">Add a Business</Link>
                     <hr />
                     <p>Got search feedback? Help us improve.</p>
                 </div>

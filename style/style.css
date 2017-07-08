@@ -1,6 +1,6 @@
 *{
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
 }
 
 p { 
@@ -9,9 +9,9 @@ p {
 }
 
 .header{
-  width: 100vw;
-  /*-width: 100%;*/
-  max-width: 100%;
+  width: 100vw !important;
+  /*width: 100% !important;*/
+  max-width: 100% !important;
   height: 70px;
   /*-margin-left: -11.5%;*/
   margin: 0% !important;
@@ -19,7 +19,13 @@ p {
   background: #2F80ED;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: initial !important;
-  outline: red solid;
+}
+
+
+
+.header-comps-left{
+  float: left;
+  width: 80vw;
 }
 
 .footer{
@@ -28,6 +34,7 @@ p {
   margin-left: -11.5%;
   background: #CCC;
 }
+
 
 .logoContainer{
   width: 147px;
@@ -38,53 +45,60 @@ p {
   font-size: 48px;
   line-height: 100%;
   color: #FFFFFF;
-  position: absolute;
+  /*position: absolute;*/
+  float: left;
+  margin-right: 11vw;
   margin-left: 20px;
-  top: 2%;
+  margin-top: 1.5%;
 }
 
 .searchBar{
   font-size: 24px;
   font-family: Roboto;
   color: #FFF;
-  width: 30%;
+  width: 35%;
   height: 45px;
   border-radius: 5px;
   border: 0px;
   background: #2F6EED;
-  position: absolute;
-  padding: 5px;
-  left: 20%;
-  top: 2%;
+  position: relative;
+  float: left;
+  padding: 0px 5px!important;
+  clear: top;
+  margin-top: 1.3vh;
 }
 
 .navBarContainer{
-  position: absolute;
-  left: 55%;
-  top: 4%;
+  position: relative;
+  float: left;
+  left: 7%;
+  margin-top: 1.7%;
 }
 
 .container{
-  -position: absolute;
+  /*position: absolute;*/
   position: relative;
   /*float: left;*/
-  margin: 0 !important;
+  margin: auto !important;
   /*margin-top: 20px;*/
-  width: 100%;
+  /*width: 100%;*/
+  width: 100vw !important;
   max-width: 100% !important;
   /*outline: red solid;*/
   font-family: Roboto;
 }
 
 .Container{
-  -position: absolute;
+  /*position: absolute;*/
   position: relative;
   /*float: left;*/
   /*margin-top: 20px;*/
   width: 60%;
   display: block;
-  margin: auto;
+  float: left;
   margin-top: 10mm;
+  margin-left: 6vw;
+  margin-right: 0%;
   max-width: 100% !important;
   /*outline: red solid;*/
   font-family: Roboto;
@@ -99,7 +113,7 @@ p {
   top: 0px;
   margin-right: 20px;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 10px !important;
   background: #FFFFFF;
   border-radius: 5px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
@@ -121,8 +135,8 @@ p {
 
 .profile-picture{
   position: relative;
-  left: 2px;
- 
+  left: 5px;
+  clear: left;
   float: left;
   margin: 0;
   width: 30%;
@@ -169,7 +183,7 @@ p {
   font-size: 18px;
   line-height: 100%;
   color: #FFFFFF;
-  padding: 10px;
+  padding: 10px !important;
   border-radius: 5px;
   border: 0px;
   margin-right: 5px;
@@ -183,6 +197,7 @@ p {
 .AuthLinksContainer{
   position: absolute;
   right: 1vw;
+  top: 0.2vh;
 }
 
 .AuthLinksContainer a, .AuthLinksContainer a:active, .AuthLinksContainer a:visited,
@@ -233,6 +248,7 @@ form a {
 
 .AuthContainer{
   margin-top: 20px;
+  margin-left: 15px;
   font-family: Roboto;
   font-size: 14px;
 }
@@ -245,8 +261,16 @@ form a {
   position: relative;
   width: 30%;
   float: left;
-  left: 0px;
+  left: 15px;
   margin-right: 10%;
+}
+
+.LogInAuthContainer > .loginContainer > form > button{
+  padding: 2px 4px !important;
+}
+
+.LogInAuthContainer > .loginContainer > form > a{
+  padding: 2px 4px !important;
 }
 
 .SignUpAuthContainer{
@@ -256,20 +280,41 @@ form a {
   right: 0px;
 }
 
+.SignUpAuthContainer > .signupContainer > form > button{
+  padding: 2px 4px !important;
+}
+
+.SignUpAuthContainer > .signupContainer > form > a{
+  padding: 2px 4px !important;
+}
+
 .form-button{
   position: relative;
   top: 5%;
 }
 
+
+.restaurantItem-container{
+  width: 100%;
+  height: auto;
+  /*outline: black dashed;*/
+  padding: 0% !important;
+  margin-top: 15px !important;
+}
+
+.restaurantItem-container > :first-of-type{
+  clear: left !important;
+}
 .restaurantItem{
   width: 350px;
   height: 120px;
   float: left;
-  margin-right: 15px;
   background: #FFFFFF;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  margin-right: 15px;
   margin-bottom: 20px;
   border-radius: 5px;
+  /*outline: red solid;*/
 }
 
 .eventItem{
@@ -474,11 +519,20 @@ element.style {
 }
 
 .sidebar-info{
+  position: relative;
+  /*top: 26.85vh;*/
+  float: left;
+  margin-top: 4.5%;
+  margin-right: 6vw;
   background-color: #EDEDED;
   border-radius: 3px;
-  padding: 10px;
+  padding: 10px !important;
   font-family: Roboto;
   font-size: 14px;
+}
+
+.sb-btn{
+  padding: 2px 4px !important;
 }
 
 .sidebar-info h5{
@@ -490,4 +544,7 @@ element.style {
   font-family: Roboto;
   float: right;
   margin-bottom: 5px;
+}
+
+.houseContainer{
 }

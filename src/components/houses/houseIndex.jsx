@@ -31,8 +31,8 @@ class House extends Component {
 
   render(){
     return(
-      <div>
-        <div className="Container animated fadeIn">
+      <div >
+        <div className="Container animated fadeIn houseContainer">
           <h3>Rooms for Rent</h3>
           <hr className="line-brightPink-left" />
 

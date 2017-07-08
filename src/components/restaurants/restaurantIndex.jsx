@@ -48,7 +48,9 @@ class Restaurant extends Component{
                         </div>
                     </div>
                     <br />
-                    { this.renderRestaurants() }
+                    <div className="restaurantItem-container">
+                        { this.renderRestaurants() }
+                    </div>
                 </div>
 
                 <div className="recommend animated fadeIn">
