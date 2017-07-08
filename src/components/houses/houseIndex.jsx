@@ -47,7 +47,10 @@ class House extends Component {
 }
 
 function mapStateToProps(state){
-    return { houses: state.houses }
+    return {
+      houses: state.houses,
+      loginStatus: state.loginStatus
+    }
 }
 
 export default connect(mapStateToProps, { fetchHouses })(House);

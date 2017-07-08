@@ -24,17 +24,22 @@ class LogIn extends Component{
     }
 
     onSubmit(values){
+        this.setState({loginStatus: ''});
         this.props.login(values);
 
         this.checkLoginStatus();
     }
 
     checkLoginStatus(){
-        if(this.props.loginStatus === "success"){
+        if(this.props.loginStatus === true){
             this.props.history.push('/dashboard');
         }
-        else if(this.props.loginStatus === "fail"){
+        else if(this.props.loginStatus === false){
             document.getElementById("response").innerHTML="Log in failed, please check email and password.";
+            window.setTimeout(() => {
+                this.checkLoginStatus();
+            }, 100 
+         )
         }
         else{
             window.setTimeout(() => {
