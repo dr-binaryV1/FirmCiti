@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import { fetchHouse } from '../../actions'
+import { Loader } from '../includes/loader';
 
 class HouseDetail extends Component{
     componentDidMount(){
@@ -11,7 +13,7 @@ class HouseDetail extends Component{
     render(){
         return(
             <div className="Container animated fadeIn">
-
+                <Loader />
             </div>
         );
     }
