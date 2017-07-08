@@ -6,16 +6,16 @@ import { Link, withRouter } from 'react-router-dom';
 import Rating from 'react-rating';
 
 import { fetchRestaurantDetail, fetchRestaurantComments, postRestaurantComment } from '../../actions';
-import Recommend from '../recommend/recommendIndex';
-import CommentItem from '../commentItem';
+import SideBar from '../sidebar/sidebar';
+import ReviewItem from '../reviews/reviewItem';
 import MenuItem from './restaurantMenuItem';
 
 class RestaurantDetail extends Component{
     componentDidMount(){
         const { id } = this.props.match.params;
-        window.setInterval(() => this.props.fetchRestaurantDetail(id), 1000); 
+        //window.setInterval(() => this.props.fetchRestaurantDetail(id), 1000);
+        this.props.fetchRestaurantDetail(id); 
     }
-
 
     onSubmit(values){
         const { id } = this.props.match.params;
@@ -37,7 +37,7 @@ class RestaurantDetail extends Component{
         if(restaurant.comments.length > 0){
             return _.map(restaurant.comments, comment => {
                 return(
-                    <CommentItem 
+                    <ReviewItem 
                         name={ comment.name }
                         comment={ comment.comment }
                         date={ comment.createdAt }
@@ -97,7 +97,6 @@ class RestaurantDetail extends Component{
         if(!restaurant){
             return (
                 <div className="Container  animated fadeIn">
-                    <Link className="btn btn-primary" to="/restaurants">Back to Restaurants</Link>
                     <h4>Loading...</h4>
                 </div>
             );
@@ -106,7 +105,6 @@ class RestaurantDetail extends Component{
         return(
             <div>
                 <div className="Container  animated fadeIn">
-                    <Link className="btn btn-primary" to="/restaurants">Back to Restaurants</Link>
                     <div className="left">
                         <div className="DisplayImageContainer">
                             <img className="profile-picture" src="../src/static/images/noImage.jpg" alt="profile picture" />
@@ -114,14 +112,12 @@ class RestaurantDetail extends Component{
                         <div className="information">
                             <h2>{ restaurant.name }</h2>
                             <hr className="line-brightPink-left" />
+                            <Rating
+                                initialRate={ restaurant.rating } />
                             <p>{ restaurant.description }</p>
                             <p>Address: { restaurant.address } </p>
                             <p>Telephone: { restaurant.tel } </p>
                             <p>Open Hours: { `${restaurant.openTime}AM - ${restaurant.closeTime}PM` } </p>
-                            
-                            <h5>Rate { restaurant.name }? </h5>
-                            <Rating
-                                initialRate={ restaurant.rating } />
                         </div>
                     </div>
                     <div className="restaurant-menu">
@@ -130,11 +126,11 @@ class RestaurantDetail extends Component{
                         { this.renderMenu(restaurant) }
                     </div>
                     <div className="restaurant-comment">
-                        <h4>Comments</h4>
+                        <h4>Reviews</h4>
                         <hr className="line-brightPink-left-sm" />
                         { this.renderComment(restaurant) }
                         <hr />
-                        <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
+                        <form className="review-form" onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                             <Field
                                 label="Name:"
                                 name="name"
@@ -160,7 +156,7 @@ class RestaurantDetail extends Component{
                 </div>
 
                 <div className="recommend animated fadeIn">
-                    <Recommend type="Menu" />
+                   <SideBar loginStatus={ this.props.loginStatus }/>
                 </div>
             </div>
         );
@@ -169,7 +165,7 @@ class RestaurantDetail extends Component{
 
 function validate(values){
     const errors = {};
-
+    
     if(!values.name || values.name.length < 3){
         errors.name = "Enter a valid name thats atleast 3 characters.";
     }
@@ -185,8 +181,11 @@ function validate(values){
     return errors;
 }
 
-function mapStateToProps({ restaurants }, ownProps) {
-    return { restaurant: restaurants[ownProps.match.params.id] }
+function mapStateToProps(state, ownProps) {
+    return { 
+        restaurant: state.restaurants[ownProps.match.params.id],
+        loginStatus: state.loginStatus 
+    }
 }
 
 export default reduxForm({

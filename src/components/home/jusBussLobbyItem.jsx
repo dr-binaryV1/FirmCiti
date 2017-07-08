@@ -9,10 +9,10 @@ const LobbyItem = (props) => {
             <div className="display-picture">
                 <img className="LobbyImage" src={props.img} alt={props.alt} />
             </div>
-            <div className="item-info">
+            <div className="information">
                 <p>{props.Desc}</p>
-
-                <Link className="readMore" to={props.url}>View Category</Link>
+                <br />
+                <Link className="blue-links" to={props.url}>View Category</Link>
             </div>
         </div>
     );

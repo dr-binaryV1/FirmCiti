@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 import { fetchRestaurants } from '../../actions';
 import RestaurantItem from './restaurantItem';
-import Recommend from '../recommend/recommendIndex';
+import Map from '../sidebar/map';
+import SideBar from '../sidebar/sidebar'
 
 class Restaurant extends Component{
     componentDidMount(){
@@ -51,7 +52,7 @@ class Restaurant extends Component{
                 </div>
 
                 <div className="recommend animated fadeIn">
-                    <Recommend type="Restaurant" item={this.props.restaurants}/>
+                    <SideBar loginStatus={ this.props.loginStatus }/>
                 </div>
             </div>
         );
@@ -59,7 +60,10 @@ class Restaurant extends Component{
 }
 
 function mapStateToProps(state){
-    return { restaurants: state.restaurants };
+    return { 
+        restaurants: state.restaurants,
+        loginStatus: state.loginStatus
+    };
 }
 
 export default connect(mapStateToProps, { fetchRestaurants })(Restaurant);

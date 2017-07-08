@@ -1,36 +1,23 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Title, { flushTitle } from 'react-title-component';
 
-import { fetchUniverisity } from '../../actions';
 import LobbyItem from './jusBussLobbyItem';
 
 class JusBussIndex extends Component {
     componentDidMount(){
-        this.props.fetchUniverisity();
         <Title render="JusBuss"/>
-    }
-
-    renderUniversity(){
-        return _.map(this.props.university, university => {
-            return(
-                <li key={university._id}>
-                    { university.name }
-                </li>
-            );
-        });
     }
 
     render(){
         return(
             <div className="Container  animated fadeIn">
                 <LobbyItem 
-                    Name="Universities" 
+                    Name="Schools/Universities" 
                     Desc="View Universities in your area. Check out locations and chill spots on campus and more." 
                     img="src/static/images/utech.jpg"
                     alt="University Image" 
-                    url="#" />
+                    url="/schools" />
 
                 <LobbyItem 
                     Name="Restaurants" 
@@ -40,7 +27,7 @@ class JusBussIndex extends Component {
                     url="/restaurants" />
 
                 <LobbyItem 
-                    Name="Houses for Rent" 
+                    Name="Rooms for Rent" 
                     Desc="an agreement where a payment is made for the temporary use of a good, service..." 
                     img="src/static/images/rentHouse.jpg"
                     alt="House for rent Image"
@@ -51,14 +38,10 @@ class JusBussIndex extends Component {
                     Desc="View upcoming events in your location, bookmark and add these events to your calendar." 
                     img="src/static/images/Upcoming-Events.jpg"
                     alt="Events Image"
-                    url="#" />
+                    url="/events" />
             </div>
         );
     }
 }
 
-function mapStateToProps(state){
-    return { university: state.university }
-}
-
-export default connect(mapStateToProps, { fetchUniverisity })(JusBussIndex);
+export default JusBussIndex;
