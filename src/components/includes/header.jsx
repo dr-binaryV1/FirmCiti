@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Header extends Component{
-  constructor(){
-    super();
-
-    this.state = {
-      loggedIn: false
-    };
-  }
-
     onSubmit(values){
 
+    }
+
+    isLoggedIn(){
+      if(this.props.loginStatus === true){
+        return (
+          <p className="loggedInGreeting">Welcome Sir!</p>
+        )
+      } else {
+          return(
+            <Link to="/authorize" className="login">Login / SignUp</Link>
+          );
+      }
     }
 
     render(){
@@ -41,7 +46,7 @@ class Header extends Component{
                     <Link to="/restaurants" className="nav-item">Restaurants</Link>
                   </div>
                   <div className="AuthLinksContainer">
-                  <Link to="/authorize" className="login">Login / SignUp</Link>
+                      { this.isLoggedIn() }
                   </div>
                 </div>
             </div>
@@ -49,4 +54,8 @@ class Header extends Component{
     }
 }
 
-export default Header;
+function mapStateToProps(state){
+  return { loginStatus: state.loginStatus }
+}
+
+export default connect(mapStateToProps, {})(Header);

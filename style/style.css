@@ -134,6 +134,11 @@ p {
   float: right;
 }
 
+.loggedInGreeting{
+  color: #FFF;
+  font-weight: bold;
+}
+
 .nav-item{
   width: 79px;
   height: 43px;
