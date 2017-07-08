@@ -31,10 +31,10 @@ class LogIn extends Component{
     }
 
     checkLoginStatus(){
-        if(this.props.loginStatus === true){
+        if(this.props.loginStatus.message === true){
             this.props.history.push('/dashboard');
         }
-        else if(this.props.loginStatus === false){
+        else if(this.props.loginStatus.message === false){
             document.getElementById("response").innerHTML="Log in failed, please check email and password.";
             document.getElementById("response").style.display = "block";
             window.setTimeout(() => {
