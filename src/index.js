@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import promise from 'redux-promise';
 
 import reducers from './reducers';
-import JusBussIndex from './components/home/jusBussIndex';
+import JusBussIndex from './components/home/firmCitiIndex';
 import Restaurant from './components/restaurants/restaurantIndex';
 import School from './components/schools/schoolIndex';
 import RestaurantDetails from './components/restaurants/restaurantDetails';

@@ -28,7 +28,7 @@ class Header extends Component{
                 <div className="header">
                   <Link to="/" >
                     <div className="logoContainer">
-                      <h2>JusBuss</h2>
+                      <h2>FirmCiti</h2>
                     </div>
                   </Link>
                   <div className="searchBarContainer">

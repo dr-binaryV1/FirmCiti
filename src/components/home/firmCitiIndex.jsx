@@ -2,11 +2,11 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import Title, { flushTitle } from 'react-title-component';
 
-import LobbyItem from './jusBussLobbyItem';
+import LobbyItem from './firmCitiLobbyItem';
 
 class JusBussIndex extends Component {
     componentDidMount(){
-        <Title render="JusBuss"/>
+        <Title render="FirmCiti"/>
     }
 
     render(){
