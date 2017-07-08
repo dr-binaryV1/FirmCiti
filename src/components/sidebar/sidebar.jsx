@@ -26,7 +26,7 @@ class SideBar extends Component{
                     <h5>Not here? Tell us what we're missing.</h5>
                     <p>If the business you're looking for isn't here, add it!</p>
                     <button 
-                        className="btn btn-sm btn-primary" 
+                        className="btn btn-sm btn-primary sb-btn" 
                         data-toggle="modal" 
                         data-target="#addBusinessModal">
                         Add a Business
