@@ -269,7 +269,7 @@ form a {
 .universityItem{
   padding: 5px;
   width: 380px;
-  height: 210px;
+  height: 160px;
   float: left;
   margin-right: 15px;
   background: #FFFFFF;
@@ -483,8 +483,8 @@ element.style {
   display: none;
 }
 
-.reviewButton{
-  margin-right: 10px;
+.sidebarButton{
+  margin-right: 5px;
 }
 
 .loading-animation{
