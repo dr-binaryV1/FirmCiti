@@ -12,7 +12,8 @@ class Header extends Component{
       if(this.props.session.authenticated === true){
         return (
           <div className="authHeader">
-            <p className="loggedInGreeting">Welcome {this.props.session.user.username}!</p>
+            <Link to="/profile" className="loggedInGreeting">Welcome {this.props.session.user.username}!</Link>
+            <br />
             <Link to="/signout" className="right">Sign Out</Link>
           </div>
           
