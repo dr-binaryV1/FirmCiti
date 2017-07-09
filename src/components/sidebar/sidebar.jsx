@@ -18,6 +18,11 @@ class SideBar extends Component{
                         className="btn btn-primary sidebarButton" onClick={ this.writeReview.bind(this) }>Write a Review</button>
                     <button className="btn btn-sm btn-default sidebarButton">Add Photo</button>
                     <button className="btn btn-sm btn-default sidebarButton">Share</button>
+                    <br />
+
+                    <div className="appointments">
+                        <h4>Make Appointment</h4>
+                    </div>
                 </div>
             );
         }else{
