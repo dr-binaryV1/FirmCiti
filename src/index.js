@@ -16,6 +16,7 @@ import Event from './components/events/eventIndex';
 import Header from './components/includes/header';
 import { Footer } from './components/includes/footer';
 import Auth from './components/auth/authorize';
+import SignOut from './components/auth/signout';
 import AddBusinessAsCustomer from './components/businessForms/addBusiness_as_Customer';
 import AddBusinessAsOwner from './components/businessForms/addBusiness_as_Owner';
 
@@ -34,6 +35,7 @@ ReactDOM.render(
             <Route path="/restaurants" component={Restaurant} />
             <Route path="/schools" component={School} />
             <Route path="/authorize" component={Auth} />
+            <Route path="/signout" component={SignOut} />
             <Route path="/houses/:id" component={HouseDetails} />
             <Route path="/houses" component={House} />
             <Route path="/events" component={Event} />

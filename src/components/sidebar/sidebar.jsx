@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class SideBar extends Component{
     writeReview(){
-        if(this.props.loginStatus !== true){
+        if(this.props.loginStatus.message !== true){
             this.props.history.push('/authorize');
         }
     }

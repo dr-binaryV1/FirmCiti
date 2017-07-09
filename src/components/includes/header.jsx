@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Header extends Component{
-    onSubmit(values){
+    onSubmit(){
 
     }
 
@@ -14,7 +14,7 @@ class Header extends Component{
         return (
           <div className="authHeader">
             <p className="loggedInGreeting">Welcome {user.username}!</p>
-            <Link to="#" className="right">Sign Out</Link>
+            <Link to="/signout" className="right">Sign Out</Link>
           </div>
           
         )
@@ -66,4 +66,4 @@ function mapStateToProps(state){
   return { loginStatus: state.loginStatus }
 }
 
-export default connect(mapStateToProps, {})(Header);
+export default connect(mapStateToProps, {  })(Header);

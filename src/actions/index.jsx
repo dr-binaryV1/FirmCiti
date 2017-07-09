@@ -9,6 +9,7 @@ export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
 export const FETCH_RESTAURANT_COMMENTS = "fetch_restaurant_comments";
 export const POST_COMMENT = "post_comment";
 export const LOGIN = "login";
+export const SIGNOUT = "signout";
 export const SIGNUP = "signup";
 
 const ROOT_URL = 'http://jusbuss.herokuapp.com';
@@ -90,6 +91,15 @@ export function login(values){
 
     return {
         type: LOGIN,
+        payload: request
+    };
+}
+
+export function signout(){
+    const request =axios.get(`${ROOT_URL}/logout`);
+
+    return {
+        type: SIGNOUT,
         payload: request
     };
 }
