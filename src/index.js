@@ -19,11 +19,16 @@ import Auth from './components/auth/authorize';
 import SignOut from './components/auth/signout';
 import AddBusinessAsCustomer from './components/businessForms/addBusiness_as_Customer';
 import AddBusinessAsOwner from './components/businessForms/addBusiness_as_Owner';
+import { sessionService } from 'redux-react-session';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const store=createStoreWithMiddleware(reducers);
+
+const options = { refreshOnCheckAuth: true, redirectPath: '/', driver: 'COOKIES' };
+sessionService.initSessionService(store, options);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={ store }>
     <div>
       <BrowserRouter>
         <div>

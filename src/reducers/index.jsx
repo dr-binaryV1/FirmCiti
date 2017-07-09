@@ -8,6 +8,7 @@ import RestaurantReducer from './reducer_restaurant';
 import CommentReducer from './reducer_comment';
 import LoginReducer from './reducer_login';
 import SignupReducer from './reducer_signup';
+import { sessionReducer } from 'redux-react-session';
 
 const rootReducer = combineReducers({
   events: EventReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   loginStatus: LoginReducer,
   signupStatus: SignupReducer,
   comment: CommentReducer,
+  session: sessionReducer,
   form: formReducer
 });
 

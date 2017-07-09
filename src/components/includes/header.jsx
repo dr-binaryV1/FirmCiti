@@ -9,11 +9,10 @@ class Header extends Component{
     }
 
     isLoggedIn(){
-      if(this.props.loginStatus.message === true){
-        const { user } = this.props.loginStatus;
+      if(this.props.session.authenticated === true){
         return (
           <div className="authHeader">
-            <p className="loggedInGreeting">Welcome {user.username}!</p>
+            <p className="loggedInGreeting">Welcome {this.props.session.user.username}!</p>
             <Link to="/signout" className="right">Sign Out</Link>
           </div>
           
@@ -63,7 +62,10 @@ class Header extends Component{
 }
 
 function mapStateToProps(state){
-  return { loginStatus: state.loginStatus }
+  return {
+    loginStatus: state.loginStatus,
+    session: state.session
+  }
 }
 
 export default connect(mapStateToProps, {  })(Header);

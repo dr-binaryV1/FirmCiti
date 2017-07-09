@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link, withRouter } from 'react-router-dom';
+import { sessionService } from 'redux-react-session';
 import { connect } from 'react-redux';
 
 import { login } from '../../actions';
@@ -33,6 +34,9 @@ class LogIn extends Component{
 
     checkLoginStatus(){
         if(this.props.loginStatus.message === true){
+            const { user } = this.props.loginStatus;
+            sessionService.saveUser(user);
+            sessionService.saveSession();
             this.props.history.push('/dashboard');
         }
         else if(this.props.loginStatus.message === false){
