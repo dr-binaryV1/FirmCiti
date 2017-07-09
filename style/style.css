@@ -599,6 +599,14 @@ element.style {
     padding: 0;
 }
 
+.user-photo{
+  width: 35%;
+}
+
+.user-info{
+  width: 65%;
+}
+
 @keyframes lds-square {
   0%, 80%, 100% {
     animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);

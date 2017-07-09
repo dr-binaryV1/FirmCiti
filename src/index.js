@@ -17,12 +17,13 @@ import Header from './components/includes/header';
 import { Footer } from './components/includes/footer';
 import Auth from './components/auth/authorize';
 import SignOut from './components/auth/signout';
+import UserProfile from './components/auth/userProfile';
 import AddBusinessAsCustomer from './components/businessForms/addBusiness_as_Customer';
 import AddBusinessAsOwner from './components/businessForms/addBusiness_as_Owner';
 import { sessionService } from 'redux-react-session';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
-const store=createStoreWithMiddleware(reducers);
+const store = createStoreWithMiddleware(reducers);
 
 const options = { refreshOnCheckAuth: true, redirectPath: '/', driver: 'COOKIES' };
 sessionService.initSessionService(store, options);
@@ -44,6 +45,7 @@ ReactDOM.render(
             <Route path="/houses/:id" component={HouseDetails} />
             <Route path="/houses" component={House} />
             <Route path="/events" component={Event} />
+            <Route path="/profile" component={UserProfile} />
             <Route path="/" component={JusBussIndex} />
           </Switch>
         </div>
