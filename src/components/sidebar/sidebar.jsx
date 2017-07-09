@@ -13,14 +13,14 @@ class SideBar extends Component{
         const { id } = this.props.match.params;
         if(id){
             return(
-                <div className="animated fadeIn">
-                    <button 
+                <div className="sidebar-info-review animated fadeIn">
+                    <button
                         className="btn btn-primary sidebarButton" onClick={ this.writeReview.bind(this) }>Write a Review</button>
                     <button className="btn btn-sm btn-default sidebarButton">Add Photo</button>
                     <button className="btn btn-sm btn-default sidebarButton">Share</button>
                     <br />
 
-                    <div className="appointments">
+                    <div className="sidebar-info-appointments">
                         <h4>Make Appointment</h4>
                     </div>
                 </div>
@@ -30,9 +30,9 @@ class SideBar extends Component{
                 <div className="sidebar-info">
                     <h5>Not here? Tell us what we're missing.</h5>
                     <p>If the business you're looking for isn't here, add it!</p>
-                    <button 
-                        className="btn btn-sm btn-primary sb-btn" 
-                        data-toggle="modal" 
+                    <button
+                        className="btn btn-sm btn-primary sb-btn"
+                        data-toggle="modal"
                         data-target="#addBusinessModal">
                         Add a Business
                     </button>

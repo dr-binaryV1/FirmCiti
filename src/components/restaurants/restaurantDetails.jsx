@@ -15,7 +15,7 @@ class RestaurantDetail extends Component{
     componentDidMount(){
         const { id } = this.props.match.params;
         //window.setInterval(() => this.props.fetchRestaurantDetail(id), 1000);
-        this.props.fetchRestaurantDetail(id); 
+        this.props.fetchRestaurantDetail(id);
     }
 
     onSubmit(values){
@@ -38,26 +38,27 @@ class RestaurantDetail extends Component{
         if(restaurant.comments.length > 0){
             return _.map(restaurant.comments, comment => {
                 return(
-                    <ReviewItem 
+                    <ReviewItem
                         name={ comment.name }
                         comment={ comment.comment }
                         date={ comment.createdAt }
                         id={ comment._id }
                         key={ comment._id } />
                 );
-            }); 
+            });
         }
 
         if(restaurant.comments.length == 0){
-            return <p><i>No comments yet, be the first to comment on { restaurant.name }'s profile.</i></p>
-
+            return (
+              <p><i>No comments yet, be the first to comment on { `${restaurant.name}'s` } profile.</i></p>
+            )
         }
     }
 
     renderField(field){
         const { meta: { touched, error } } = field;
         const className = `form-group ${touched && error ? 'has-danger' : ''}`;
-        
+
         if(field.type !== "textarea"){
             return(
                 <div className = { className }>
@@ -90,8 +91,8 @@ class RestaurantDetail extends Component{
             );
         }
     }
-    
-    
+
+
     render(){
         const { restaurant, handleSubmit } = this.props;
 
@@ -166,7 +167,7 @@ class RestaurantDetail extends Component{
 
 function validate(values){
     const errors = {};
-    
+
     if(!values.name || values.name.length < 3){
         errors.name = "Enter a valid name thats atleast 3 characters.";
     }
@@ -183,9 +184,9 @@ function validate(values){
 }
 
 function mapStateToProps(state, ownProps) {
-    return { 
+    return {
         restaurant: state.restaurants[ownProps.match.params.id],
-        loginStatus: state.loginStatus 
+        loginStatus: state.loginStatus
     }
 }
 

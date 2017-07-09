@@ -3,17 +3,6 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
 class UserProfile extends Component {
-    componentWillMount(){
-        const { session } = this.props;
-        if(!session.authenticate){
-            this.props.history.push('/authorize');
-        }
-    }
-
-    componentDidMount(){
-      
-    }
-
     render(){
         const { session } = this.props;
         return(

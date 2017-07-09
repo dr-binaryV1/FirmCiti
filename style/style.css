@@ -3,7 +3,7 @@
   padding: 0 !important;
 }
 
-p { 
+p {
     margin: 0;
     padding: 0;
 }
@@ -431,8 +431,8 @@ hr.line-brightPink-left-sm {
         background-color: #ED2F55;
         width: 100px;
         margin-left: 0px;
-        }        
-  
+        }
+
 
 hr.line-green-right {
         border: 0;
@@ -498,12 +498,12 @@ element.style {
   background: #FFFFFF;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  cursor: pointer; 
+  cursor: pointer;
   cursor: hand;
 }
 
 .comment-item{
-  padding: 20px;
+  padding: 20px !important;
   margin-bottom: 5px;
   background: #FFFFFF;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
@@ -539,6 +539,19 @@ element.style {
   margin-top: 4.5%;
   margin-right: 6vw;
   background-color: #EDEDED;
+  border-radius: 3px;
+  padding: 10px !important;
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+.sidebar-info-review, .sidebar-info-appointments, {
+  position: relative;
+  /*top: 26.85vh;*/
+  float: left;
+  margin-top: 4.5%;
+  margin-right: 6vw;
+  background-color: #FFF;
   border-radius: 3px;
   padding: 10px !important;
   font-family: Roboto;
@@ -585,6 +598,7 @@ element.style {
 
 .sidebarButton{
   margin-right: 5px;
+  padding: 5px !important;
 }
 
 .loading-animation{
@@ -748,4 +762,3 @@ element.style {
   -webkit-transform: translate(-50px, -50px) scale(0.5) translate(50px, 50px);
   transform: translate(-50px, -50px) scale(0.5) translate(50px, 50px);
 }
-
