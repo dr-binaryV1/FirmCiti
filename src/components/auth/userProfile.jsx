@@ -10,6 +10,8 @@ class UserProfile extends Component {
                 <div className="basic-info">
                     <div className="user-photo left">
                         <img className="profile-picture" src="/../src/static/images/noImage.jpg" alt="" />
+                        <button>upload image</button>
+                        <button>edit profile</button>
                     </div>
                     <div className="user-info left">
                         <h4>{ `${session.user.first_name} ${session.user.last_name} (${session.user.username})` }</h4>
