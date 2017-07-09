@@ -3,8 +3,15 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
 class UserProfile extends Component {
-    componentDidMount(){
+    componentWillMount(){
+        const { session } = this.props;
+        if(!session.authenticate){
+            this.props.history.push('/authorize');
+        }
+    }
 
+    componentDidMount(){
+      
     }
 
     render(){
@@ -42,7 +49,7 @@ class UserProfile extends Component {
                     <p><i>No order made yet.</i></p>
                 </div>
             </div>
-        );  
+        );
     }
 }
 
