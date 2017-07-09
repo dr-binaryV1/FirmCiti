@@ -3,6 +3,21 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
 class UserProfile extends Component {
+    onClick(){
+
+    }
+
+    handlechange(){
+      var fileinput = document.getElementById("upload");
+      var textinput = document.getElementById("filename");
+      textinput.value = fileinput.value;
+    }
+
+    handleUploadClick(){
+      var fileinput = document.getElementById("upload");
+      fileinput.click();
+    }
+
     render(){
         const { session } = this.props;
         return(
@@ -10,7 +25,9 @@ class UserProfile extends Component {
                 <div className="basic-info">
                     <div className="user-photo left">
                         <img className="profile-picture" src="/../src/static/images/noImage.jpg" alt="" />
-                        <button>upload image</button>
+                        <input type="file" id="upload" name="fileupload" onChange={ this.handlechange }/>
+                        <input type="text" id="filename"/>
+                        <input type="button" value="Upload" id="fakeBrowse" onClick={ this.handleUploadClick }/>
                         <button>edit profile</button>
                     </div>
                     <div className="user-info left">
