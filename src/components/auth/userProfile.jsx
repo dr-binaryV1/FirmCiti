@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
+import { postImages } from '../../actions';
+
 class UserProfile extends Component {
     constructor(props){
         super(props);
@@ -14,7 +16,6 @@ class UserProfile extends Component {
 
     _handleSubmit(e){
         e.preventDefault();
-        console.log('handle uoloading...', this.state.file);
     }
 
     _handleImageChange(e){
@@ -22,6 +23,7 @@ class UserProfile extends Component {
 
         let reader = new FileReader();
         let file = e.target.files[0];
+        //this.props.postImages(file);
 
         reader.onloadend = () => {
             this.setState({
@@ -47,9 +49,12 @@ class UserProfile extends Component {
                     <div className="user-photo left">
                         { $imagePreview }
 
-                        <form onSubmit={(e) => this._handleSubmit(e)}>
-                            <input type="file" onChange={(e) => this._handleImageChange(e)} />
-                            <button type="submit" onClick={(e) => this._handleSubmit(e)}>upload</button>
+                        <form method="post"
+                            action="http://jusbuss.herokuapp.com/profilepicture/upload"
+                            onSubmit={(e) => this._handleSubmit(e)}
+                            encType="multipart/form-data">
+                                <input type="file" name="profilePic" onChange={(e) => this._handleImageChange(e)} />
+                                <button type="submit">upload</button>
                         </form>
                         <button>edit profile</button>
                     </div>
@@ -89,4 +94,4 @@ function mapStateToProps(state){
     return { session: state.session }
 }
 
-export default connect(mapStateToProps, { })(UserProfile);
+export default connect(mapStateToProps, { postImages })(UserProfile);

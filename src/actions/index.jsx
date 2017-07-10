@@ -8,6 +8,7 @@ export const FETCH_RESTAURANTS = "fetch_restaurants";
 export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
 export const FETCH_RESTAURANT_COMMENTS = "fetch_restaurant_comments";
 export const POST_COMMENT = "post_comment";
+export const UPLOAD_IMAGES = "upload_images";
 export const LOGIN = "login";
 export const SIGNOUT = "signout";
 export const SIGNUP = "signup";
@@ -82,6 +83,15 @@ export function postRestaurantComment(values, id){
 
     return {
         type: POST_COMMENT,
+        payload: request
+    }
+}
+
+export function postImages(values){
+    const request = axios.post(`${ROOT_URL}/profilepicture/upload`, values);
+
+    return {
+        type: UPLOAD_IMAGES,
         payload: request
     }
 }
