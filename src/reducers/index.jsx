@@ -6,8 +6,7 @@ import HouseReducer from './reducer_house';
 import SchoolReducer from './reducer_school';
 import RestaurantReducer from './reducer_restaurant';
 import CommentReducer from './reducer_comment';
-import LoginReducer from './reducer_login';
-import SignupReducer from './reducer_signup';
+import AuthReducer from './reducer_auth';
 import { sessionReducer } from 'redux-react-session';
 
 const rootReducer = combineReducers({
@@ -15,8 +14,8 @@ const rootReducer = combineReducers({
   houses: HouseReducer,
   schools: SchoolReducer,
   restaurants: RestaurantReducer,
-  loginStatus: LoginReducer,
-  signupStatus: SignupReducer,
+  loginStatus: AuthReducer,
+  signupStatus: AuthReducer,
   comment: CommentReducer,
   session: sessionReducer,
   form: formReducer
