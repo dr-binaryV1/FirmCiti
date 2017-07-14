@@ -10,15 +10,15 @@ import AuthReducer from './reducer_auth';
 import { sessionReducer } from 'redux-react-session';
 
 const rootReducer = combineReducers({
-  events: EventReducer,
-  houses: HouseReducer,
-  schools: SchoolReducer,
-  restaurants: RestaurantReducer,
-  loginStatus: AuthReducer,
-  signupStatus: AuthReducer,
-  comment: CommentReducer,
-  session: sessionReducer,
-  form: formReducer
+	events: EventReducer,
+	houses: HouseReducer,
+	schools: SchoolReducer,
+	restaurants: RestaurantReducer,
+	loginStatus: AuthReducer,
+	signupStatus: AuthReducer,
+	comment: CommentReducer,
+	session: sessionReducer,
+	form: formReducer
 });
 
 export default rootReducer;
