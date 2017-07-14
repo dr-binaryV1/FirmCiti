@@ -8,6 +8,10 @@ p {
     padding: 0;
 }
 
+input {
+  padding: 7px !important;
+}
+
 .header{
   width: 100vw !important;
   /*width: 100% !important;*/
@@ -573,9 +577,6 @@ element.style {
   margin-bottom: 5px;
 }
 
-
-.houseContainer{
-}
 .error{
   background-color: #FF7070;
   border-radius: 3px;
