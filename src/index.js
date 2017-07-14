@@ -29,27 +29,27 @@ const options = { refreshOnCheckAuth: true, redirectPath: '/', driver: 'COOKIES'
 sessionService.initSessionService(store, options);
 
 ReactDOM.render(
-  <Provider store={ store }>
-    <div>
-      <BrowserRouter>
-        <div>
-          <Header />
-          <Switch>
-            <Route path="/add-business-customer" component={AddBusinessAsCustomer} />
-            <Route path="/add-business-owner" component={AddBusinessAsOwner} />
-            <Route path="/restaurants/:id" component={RestaurantDetails} />
-            <Route path="/restaurants" component={Restaurant} />
-            <Route path="/schools" component={School} />
-            <Route path="/authorize" component={Auth} />
-            <Route path="/signout" component={SignOut} />
-            <Route path="/houses/:id" component={HouseDetails} />
-            <Route path="/houses" component={House} />
-            <Route path="/events" component={Event} />
-            <Route path="/profile" component={UserProfile} />
-            <Route path="/" component={JusBussIndex} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </div>
-  </Provider>
+	<Provider store={ store }>
+		<div>
+			<BrowserRouter>
+				<div>
+					<Header />
+					<Switch>
+						<Route path="/add-business-customer" component={AddBusinessAsCustomer} />
+						<Route path="/add-business-owner" component={AddBusinessAsOwner} />
+						<Route path="/restaurants/:id" component={RestaurantDetails} />
+						<Route path="/restaurants" component={Restaurant} />
+						<Route path="/schools" component={School} />
+						<Route path="/authorize" component={Auth} />
+						<Route path="/signout" component={SignOut} />
+						<Route path="/houses/:id" component={HouseDetails} />
+						<Route path="/houses" component={House} />
+						<Route path="/events" component={Event} />
+						<Route path="/profile" component={UserProfile} />
+						<Route path="/" component={JusBussIndex} />
+					</Switch>
+				</div>
+			</BrowserRouter>
+		</div>
+	</Provider>
   , document.querySelector('.container'));
