@@ -16,7 +16,7 @@ class Restaurant extends Component{
     }
 
     renderRestaurants(){
-         var isEmpty = _.isEmpty(this.props.restaurants);
+        var isEmpty = _.isEmpty(this.props.restaurants);
         if(isEmpty){
             <div className="Container animated fadeIn">
                 <Loader />
