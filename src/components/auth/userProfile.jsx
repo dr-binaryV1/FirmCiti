@@ -44,7 +44,7 @@ class UserProfile extends Component {
             $imagePreview = (<img className="profile-picture" src="/../src/static/images/noImage.jpg" alt="" />)
         }
         return(
-            <div className="profileContainer">
+            <div className="Container">
                 <div className="basic-info">
                     <div className="user-photo left">
                         { $imagePreview }
