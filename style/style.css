@@ -412,38 +412,40 @@ hr.line-blue-left {
     height: 5px;
     background-color: #41a9c6;
     width: 66px;
-    margin-left: 0px;}
+    margin-left: 0px;
+}
 
 
 hr.line-orange-center {
-        border: 0;
-        height: 3px;
-        background-color: #f57e3a;
-        width: 166px;}
+    border: 0;
+    height: 3px;
+    background-color: #f57e3a;
+    width: 166px;
+}
 
 hr.line-brightPink-left {
-        border: 0;
-        height: 1.5px;
-        background-color: #ED2F55;
-        width: 160px;
-        margin-left: 0px;
-        }
+    border: 0;
+    height: 1.5px;
+    background-color: #ED2F55;
+    width: 160px;
+    margin-left: 0px;
+}
 
 hr.line-brightPink-left-sm {
-        border: 0;
-        height: 1.5px;
-        background-color: #ED2F55;
-        width: 100px;
-        margin-left: 0px;
-        }
-
+    border: 0;
+    height: 1.5px;
+    background-color: #ED2F55;
+    width: 100px;
+    margin-left: 0px;
+}
 
 hr.line-green-right {
-        border: 0;
-        height: 5px;
-        background-color: #2cba6c;
-        width: 66px;
-        margin-right: 0px;}
+    border: 0;
+    height: 5px;
+    background-color: #2cba6c;
+    width: 66px;
+    margin-right: 0px;
+}
 
 .form-elements-container{
   width: 100%;
@@ -536,7 +538,7 @@ element.style {
   border: 1px solid #EFEFEF;
 }
 
-.sidebar-info{
+.sidebar-info, .sidebar-info-review{
   position: relative;
   /*top: 26.85vh;*/
   float: left;
@@ -594,7 +596,8 @@ element.style {
 }
 
 .loginResponse, .signUpResponse{
-  display: none;
+    padding: 10px !important;
+    display: none;
 }
 
 .sidebarButton{
@@ -632,6 +635,18 @@ element.style {
 
 .signed-out-img{
   width: 30%;
+}
+
+.signout-container{
+    position: absolute;
+    width: 100%;
+}
+
+.signout-content{
+    position: absolute;
+    align-content: center;
+    align-self: center;
+    left: 30%;
 }
 
 .basic-info{
