@@ -12,6 +12,11 @@ input, button {
   padding: 7px !important;
 }
 
+.datetime-contaner input{
+    width: 70%;
+    margin-right: 5px;
+}
+
 .header{
   width: 100vw !important;
   /*width: 100% !important;*/
@@ -542,6 +547,7 @@ element.style {
   position: relative;
   /*top: 26.85vh;*/
   float: left;
+  width: 35%
   margin-top: 4.5%;
   margin-right: 6vw;
   background-color: #EDEDED;
@@ -554,6 +560,7 @@ element.style {
 .sidebar-info-review, .sidebar-info-appointments, {
   position: relative;
   /*top: 26.85vh;*/
+  width: 35%
   float: left;
   margin-top: 4.5%;
   margin-right: 6vw;

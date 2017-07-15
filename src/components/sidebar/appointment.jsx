@@ -5,7 +5,7 @@ const Appointment = (props) => {
     function renderField(field){
         const { meta: { touched, error } } = field;
         const className = `form-group ${touched && error ? 'has-danger' : ''}`;
-        
+
         return(
             <div className = { className }>
                 <input
@@ -19,7 +19,7 @@ const Appointment = (props) => {
             </div>
         );
     }
-    
+
     return (
         <div className="sidebar-info-appointments">
             <h4>Make Appointment</h4>
@@ -29,11 +29,19 @@ const Appointment = (props) => {
                 type = "text"
                 component = {renderField} />
 
-            <Field
-                label = "Date"
-                name = "date"
-                type = "date"
-                component = {renderField} />
+            <div className="datetime-contaner">
+                <Field
+                    label = "Date"
+                    name = "date"
+                    type = "date"
+                    component = {renderField} />
+
+                <Field
+                    label = "Time"
+                    name = "time"
+                    type = "number"
+                    component = {renderField} />
+            </div>
 
             <Field
                 label = "Reason"

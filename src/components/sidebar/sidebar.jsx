@@ -5,7 +5,7 @@ import Appointment from './appointment';
 
 class SideBar extends Component{
     writeReview(){
-        if(this.props.loginStatus.message !== true){
+        if(this.props.session.authenticated !== true){
             this.props.history.push('/authorize');
         }
     }
@@ -43,4 +43,10 @@ class SideBar extends Component{
     }
 }
 
-export default withRouter(SideBar);
+function mapStateToProps(state){
+    return {
+        session: state.session
+    }
+}
+
+export default withRouter(connect(mapStateToProps, { })(SideBar));
