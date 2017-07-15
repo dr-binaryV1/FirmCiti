@@ -16,7 +16,7 @@ class Header extends Component{
 				<br />
 				<Link to="/signout" className="right">Sign Out</Link>
 			</div>
-			
+
 			)
 		} else {
 			return(
@@ -34,7 +34,7 @@ class Header extends Component{
                   	<div className="header-comps-left">
 						<Link to="/" >
 							<div className="logoContainer">
-								<h2>JusBuss</h2>
+								<h2>FirmCiti</h2>
 							</div>
 						</Link>
                     <div className="searchBarContainer">
@@ -47,7 +47,7 @@ class Header extends Component{
                     </div>
                     <div className="navBarContainer">
 						<Link to="/" className="nav-item">Home</Link>
-						<Link to="/events" className="nav-item">Events</Link> 
+						<Link to="/events" className="nav-item">Events</Link>
 						<Link to="/houses" className="nav-item">Houses</Link>
 						<Link to="/restaurants" className="nav-item">Restaurants</Link>
                     <Link to="#" className="nav-item">Shop</Link>
