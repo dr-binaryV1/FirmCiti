@@ -44,7 +44,7 @@ class UserProfile extends Component {
             $imagePreview = (<img className="profile-picture" src="/../src/static/images/noImage.jpg" alt="" />)
         }
         return(
-            <div className="Container">
+            <div className="Container animated fadeIn">
                 <div className="basic-info">
                     <div className="user-photo left">
                         { $imagePreview }
@@ -54,14 +54,14 @@ class UserProfile extends Component {
                             onSubmit={(e) => this._handleSubmit(e)}
                             encType="multipart/form-data">
                                 <input type="file" name="profilePic" onChange={(e) => this._handleImageChange(e)} />
-                                <button className="btn-sm btn-primary btn" type="submit">upload</button>
+                                <button className="btn-sm btn-primary btn left" type="submit">upload</button>
                         </form>
-                        <button className="btn btn-success btn-sm">edit profile</button>
+                        <button className="btn btn-success btn-sm left">edit profile</button>
                     </div>
 
                     <div className="user-info left">
                         <h4>{ `${session.user.first_name} ${session.user.last_name} (${session.user.username})` }</h4>
-                        <hr />
+                        <hr className="line-brightPink-left" />
                         <p>Email: { session.user.email } </p>
                         <p>Phone: { session.user.phone } </p>
                         <br />
@@ -73,6 +73,7 @@ class UserProfile extends Component {
                     <h4>Appointments</h4>
                     <p><i>No appointments made yet.</i></p>
                 </div>
+                <hr />
 
                 <div className="user-business">
                     <h4>Business</h4>
