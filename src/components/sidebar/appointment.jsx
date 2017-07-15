@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
-const Appointment = (props) => {
-    function renderField(field){
+class Appointment extends Component {
+    renderField(field){
         const { meta: { touched, error } } = field;
         const className = `form-group ${touched && error ? 'has-danger' : ''}`;
 
@@ -20,38 +21,72 @@ const Appointment = (props) => {
         );
     }
 
-    return (
-        <div className="sidebar-info-appointments">
-            <h4>Make Appointment</h4>
-            <Field
-                label = "Name"
-                name = "customerName"
-                type = "text"
-                component = {renderField} />
+    onSubmit(){
+    }
 
-            <div className="datetime-contaner">
-                <Field
-                    label = "Date"
-                    name = "date"
-                    type = "date"
-                    component = {renderField} />
+    render(){
+        const { handleSubmit } = this.props;
 
-                <Field
-                    label = "Time"
-                    name = "time"
-                    type = "number"
-                    component = {renderField} />
+        return (
+            <div className="sidebar-info-appointments">
+                <h5>Make Appointment</h5>
+                <form onSubmit = { handleSubmit(this.onSubmit.bind(this)) } >
+                    <Field
+                        label = "Name"
+                        name = "customerName"
+                        type = "text"
+                        component = {this.renderField} />
+
+                    <div className="datetime-contaner">
+                        <Field
+                            label = "Date"
+                            name = "date"
+                            type = "date"
+                            component = {this.renderField} />
+
+                        <Field
+                            label = "Time"
+                            name = "time"
+                            type = "number"
+                            component = {this.renderField} />
+                    </div>
+
+                    <Field
+                        label = "Reason"
+                        name = "reason"
+                        type = "text"
+                        component = {this.renderField} />
+
+                    <button type="submit" className="btn btn-primary btn-sm">Make Appointment</button>
+                </form>
             </div>
-
-            <Field
-                label = "Reason"
-                name = "reason"
-                type = "text"
-                component = {renderField} />
-
-            <button className="btn btn-primary btn-sm">Make Appointment</button>
-        </div>
-    );
+        );
+    }
 }
 
-export default Appointment;
+function validate(values){
+    const errors = {};
+
+    if(!values.customerName){
+        errors.customerName = " ";
+    }
+
+    if(!values.date){
+        errors.date = " ";
+    }
+
+    if(!values.time){
+        errors.time = " ";
+    }
+
+    if(!values.reason){
+        errors.reason = " ";
+    }
+
+    return errors;
+}
+
+export default reduxForm({
+    form: 'AppointmentForm',
+    validate
+}) (connect(null, {  })(Appointment));

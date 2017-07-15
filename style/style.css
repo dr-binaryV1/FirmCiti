@@ -645,7 +645,8 @@ element.style {
 }
 
 .signout-container{
-    position: absolute;
+    position: relative;
+    margin-top: 20px;
     width: 100%;
 }
 
