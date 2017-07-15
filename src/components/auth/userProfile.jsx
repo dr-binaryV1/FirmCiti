@@ -54,9 +54,9 @@ class UserProfile extends Component {
                             onSubmit={(e) => this._handleSubmit(e)}
                             encType="multipart/form-data">
                                 <input type="file" name="profilePic" onChange={(e) => this._handleImageChange(e)} />
-                                <button type="submit">upload</button>
+                                <button className="btn-sm btn-primary btn" type="submit">upload</button>
                         </form>
-                        <button>edit profile</button>
+                        <button className="btn btn-success btn-sm">edit profile</button>
                     </div>
 
                     <div className="user-info left">
@@ -68,6 +68,11 @@ class UserProfile extends Component {
                     </div>
                 </div>
                 <hr />
+                <br />
+                <div className="user-appointments">
+                    <h4>Appointments</h4>
+                    <p><i>No appointments made yet.</i></p>
+                </div>
 
                 <div className="user-business">
                     <h4>Business</h4>

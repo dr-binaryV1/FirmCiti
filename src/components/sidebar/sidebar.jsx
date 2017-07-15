@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Appointment from './appointment';
 
 class SideBar extends Component{
     writeReview(){
@@ -20,9 +21,7 @@ class SideBar extends Component{
                     <button className="btn btn-sm btn-default sidebarButton">Share</button>
                     <br />
 
-                    <div className="sidebar-info-appointments">
-                        <h4>Make Appointment</h4>
-                    </div>
+                    <Appointment />
                 </div>
             );
         }else{
