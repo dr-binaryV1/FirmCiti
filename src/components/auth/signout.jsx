@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { sessionService } from 'redux-react-session';
 
 import { signout } from '../../actions';
@@ -10,13 +10,18 @@ class SignOut extends Component{
         this.props.signout();
         sessionService.deleteSession();
         sessionService.deleteUser();
-        this.props.history.push("/");
     }
     
     render(){
         return(
-            <div>
-                <p>Signed Out</p>
+            <div className="animated fadeIn signout-container">
+                <div className="signout-img">
+                    <p><img className="signed-out-img" src="src/static/images/signedOut.jpg" alt="signout image" /></p>
+                </div>
+                <div className="signout-msg">
+                    <h3>You just signed out. Please visit again</h3>
+                    <p>To sign in again, please click <Link to="/authorize">here</Link>.</p>
+                </div>
             </div>
         );
     }

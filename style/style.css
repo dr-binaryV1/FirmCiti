@@ -626,6 +626,15 @@ element.style {
   display: none;
 }
 
+.signout-container{
+  position: relative;
+  left: 30%;
+}
+
+.signed-out-img{
+  width: 30%;
+}
+
 @keyframes lds-square {
   0%, 80%, 100% {
     animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
