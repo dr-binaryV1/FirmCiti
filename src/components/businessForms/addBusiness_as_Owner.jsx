@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
 class AddBusinessAsOwner extends Component{
+    componentDidMount(){
+        
+    }
+
     onSubmit(){
             
     }
@@ -95,7 +99,13 @@ class AddBusinessAsOwner extends Component{
 }
 
 function validate(values){
+    const errors = {};
 
+    if(!values.name){
+        errors.name = "Business name is required"
+    }
+
+    return errors;
 }
 
 export default reduxForm({

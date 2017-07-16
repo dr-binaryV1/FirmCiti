@@ -4,6 +4,7 @@ export const FETCH_EVENTS = "fecth_events";
 export const FETCH_HOUSES = "fetch_houses";
 export const FETCH_HOUSE = "fetch_house";
 export const FETCH_SCHOOL = "fetch_school";
+export const FETCH_CATEGORIES = "fetch_categories";
 export const FETCH_RESTAURANTS = "fetch_restaurants";
 export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
 export const FETCH_RESTAURANT_COMMENTS = "fetch_restaurant_comments";
@@ -56,6 +57,15 @@ export function fetchRestaurants(){
 
     return {
         type: FETCH_RESTAURANTS,
+        payload: request
+    }
+}
+
+export function fetchCategories(){
+    const request = axios.get(`${ROOT_URL}/categories`);
+
+    return {
+        type: FETCH_CATEGORIES,
         payload: request
     }
 }
