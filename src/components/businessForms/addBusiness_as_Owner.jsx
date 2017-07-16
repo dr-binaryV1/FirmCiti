@@ -24,6 +24,8 @@ class AddBusinessAsOwner extends Component{
 
     onSubmit(values){
         this.props.postBusiness(values);
+
+        //TODO check response of form submission to show error message or redirect.
     }
 
     renderField(field){

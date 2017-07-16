@@ -1,22 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 import LogIn from './login';
 import SignUp from './signup';
 
-const Auth = (props) => {
-    return(
-        <div className="AuthContainer animated fadeIn">
-            <h2>Get Authenticated or Join the FirmCiti Environment!</h2>
-            <hr className="line-brightPink-left" />
-            <div className="LogInAuthContainer">
-                <LogIn />
-            </div>
+class Auth extends Component {
+    componentDidUpdate(){
+        if(this.props.session.authenticated === true){
+            this.props.history.push('/');
+        }
+    }
 
-            <div className="SignUpAuthContainer">
-                <SignUp />
+    render(){
+        return(
+            <div className="AuthContainer animated fadeIn">
+                <h2>Get Authenticated or Join the FirmCiti Environment!</h2>
+                <hr className="line-brightPink-left" />
+                <div className="LogInAuthContainer">
+                    <LogIn />
+                </div>
+
+                <div className="SignUpAuthContainer">
+                    <SignUp />
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
-export default Auth;
+function mapStateToProps(state){
+    return {
+        session: state.session
+    }
+}
+
+export default withRouter(connect(mapStateToProps, {  }) (Auth));
