@@ -12,11 +12,13 @@ class AddBusinessAsOwner extends Component{
     renderCategories(categories){
         if(categories.length > 0){
             let categoriesField = document.getElementById('category');
-            categoriesField.innerHTML = "<option id='selectCategory' value='selectCategory'>Select Category</option>";
-            
-            return _.map(categories, category => {
-                categoriesField.innerHTML += "<option id="+ category._id + " value="+ category.name +">"+ category.name +"</option>";
-            });
+            if(categoriesField){
+                categoriesField.innerHTML = "<option id='selectCategory' value='selectCategory'>Select Category</option>";
+                
+                return _.map(categories, category => {
+                    categoriesField.innerHTML += "<option id="+ category._id + " value="+ category.name +">"+ category.name +"</option>";
+                });
+            }
         }
     }
 

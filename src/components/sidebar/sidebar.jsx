@@ -29,12 +29,11 @@ class SideBar extends Component{
                 <div className="sidebar-info">
                     <h5>Not here? Tell us what we're missing.</h5>
                     <p>If the business you're looking for isn't here, add it!</p>
-                    <button
+                    <Link
                         className="btn btn-sm btn-primary sb-btn"
-                        data-toggle="modal"
-                        data-target="#addBusinessModal">
+                        to="/add-business-owner">
                         Add a Business
-                    </button>
+                    </Link>
                     <hr />
                     <p>Got search feedback? Help us improve.</p>
                 </div>
