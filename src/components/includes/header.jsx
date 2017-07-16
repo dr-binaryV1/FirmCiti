@@ -14,7 +14,9 @@ class Header extends Component{
 			<div className="authHeader">
 				<Link to="/profile" className="loggedInGreeting">Welcome {this.props.session.user.username}!</Link>
 				<br />
-				<Link to="/signout" className="right">Sign Out</Link>
+				<div className="shopping-details">
+                    <img className="shoppingCart-img" src="src/static/images/shopping_cart.png" alt="shopping card image" />
+                </div>
 			</div>
 
 			)
