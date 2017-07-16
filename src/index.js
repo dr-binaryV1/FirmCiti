@@ -16,6 +16,7 @@ import Event from './components/events/eventIndex';
 import Header from './components/includes/header';
 import { Footer } from './components/includes/footer';
 import Auth from './components/auth/authorize';
+import ShoppingCart from './components/shop/cart';
 import SignOut from './components/auth/signout';
 import UserProfile from './components/auth/userProfile';
 import AddBusinessAsCustomer from './components/businessForms/addBusiness_as_Customer';
@@ -46,6 +47,7 @@ ReactDOM.render(
 						<Route path="/houses" component={House} />
 						<Route path="/events" component={Event} />
 						<Route path="/profile" component={UserProfile} />
+						<Route path="/shoppingcart" component={ShoppingCart} />
 						<Route path="/" component={JusBussIndex} />
 					</Switch>
 				</div>

@@ -15,7 +15,7 @@ class Header extends Component{
 				<Link to="/profile" className="loggedInGreeting">Welcome {this.props.session.user.username}!</Link>
 				<br />
 				<div className="shopping-details">
-                    <img className="shoppingCart-img" src="src/static/images/shopping_cart.png" alt="shopping card image" />
+                    <Link to="/shoppingcart"><img className="shoppingCart-img" src="src/static/images/shopping_cart.png" alt="shopping card image" /></Link>
                 </div>
 			</div>
 

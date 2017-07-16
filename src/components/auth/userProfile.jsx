@@ -59,6 +59,7 @@ class UserProfile extends Component {
                                 <button className="btn-sm btn-primary btn left" type="submit">upload</button>
                         </form>
                         <button className="btn btn-success btn-sm left">edit profile</button>
+                        <Link className="btn btn-danger btn-sm left" to="/signout">Sign Out</Link>
                     </div>
 
                     <div className="user-info left">
