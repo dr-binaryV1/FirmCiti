@@ -543,11 +543,14 @@ element.style {
   border: 1px solid #EFEFEF;
 }
 
+.padded{
+  padding: 10px !important;
+}
+
 .sidebar-info, .sidebar-info-review{
   position: relative;
   /*top: 26.85vh;*/
   float: left;
-  width: 35%;
   margin-top: 4.5%;
   margin-right: 6vw;
   background-color: #EDEDED;
@@ -560,7 +563,6 @@ element.style {
 .sidebar-info-review, .sidebar-info-appointments, {
   position: relative;
   /*top: 26.85vh;*/
-  width: 35%;
   float: left;
   margin-top: 4.5%;
   margin-right: 6vw;
