@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
-import { fetchCategories } from '../../actions';
+import { fetchCategories, postBusiness } from '../../actions';
 
 class AddBusinessAsOwner extends Component{
     componentDidMount(){
@@ -11,16 +11,17 @@ class AddBusinessAsOwner extends Component{
 
     renderCategories(categories){
         if(categories.length > 0){
-            let categoriesField = document.getElementById('categories');
-            categoriesField.innerHTML = "";
+            let categoriesField = document.getElementById('category');
+            categoriesField.innerHTML = "<option id='selectCategory' value='selectCategory'>Select Category</option>";
+            
             return _.map(categories, category => {
                 categoriesField.innerHTML += "<option id="+ category._id + " value="+ category.name +">"+ category.name +"</option>";
             });
         }
     }
 
-    onSubmit(){
-            
+    onSubmit(values){
+        this.props.postBusiness(values);
     }
 
     renderField(field){
@@ -108,8 +109,8 @@ class AddBusinessAsOwner extends Component{
 
                         <Field
                             label="Select business category:"
-                            name="categories"
-                            id="categories"
+                            name="category"
+                            id="category"
                             type="select"
                             component={ this.renderField } />
 
@@ -155,6 +156,10 @@ function validate(values){
         errors.tel = "Telephone information is required";
     }
 
+    if(!values.category || values.category == "selectCategory"){
+        errors.category = "Please select a category";
+    }
+
     if(!values.openTime){
         errors.openTime = "Open hours is required";
     }
@@ -177,5 +182,5 @@ export default reduxForm({
     form: 'AddBusiness',
     validate
 }) (
-    connect(mapStateToProps, { fetchCategories }) (AddBusinessAsOwner)
+    connect(mapStateToProps, { fetchCategories, postBusiness }) (AddBusinessAsOwner)
 );
