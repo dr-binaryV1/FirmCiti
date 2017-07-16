@@ -4,6 +4,8 @@ import { Link, withRouter } from 'react-router-dom';
 
 import { postImages } from '../../actions';
 
+
+// TODO add Field component to pass values over the network using axios
 class UserProfile extends Component {
     constructor(props){
         super(props);

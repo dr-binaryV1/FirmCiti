@@ -8,6 +8,7 @@ export const FETCH_CATEGORIES = "fetch_categories";
 export const FETCH_RESTAURANTS = "fetch_restaurants";
 export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
 export const FETCH_RESTAURANT_COMMENTS = "fetch_restaurant_comments";
+export const POST_BUSINESS = "post_business";
 export const POST_COMMENT = "post_comment";
 export const UPLOAD_IMAGES = "upload_images";
 export const LOGIN = "login";
@@ -84,6 +85,15 @@ export function fetchRestaurantComments(id){
 
     return {
         type: FETCH_RESTAURANT_COMMENTS,
+        payload: request
+    }
+}
+
+export function postBusiness(values){
+    const request = axios.post(`${ROOT_URL}/add/business`, values);
+
+    return {
+        type: POST_BUSINESS,
         payload: request
     }
 }

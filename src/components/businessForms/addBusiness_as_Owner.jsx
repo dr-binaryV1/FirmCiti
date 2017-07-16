@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { connect } from 'react-redux';
+
+import { fetchCategories } from '../../actions';
 
 class AddBusinessAsOwner extends Component{
     componentDidMount(){
-        
+        this.props.fetchCategories();
+    }
+
+    renderCategories(categories){
+        if(categories.length > 0){
+            let categoriesField = document.getElementById('categories');
+            categoriesField.innerHTML = "";
+            return _.map(categories, category => {
+                categoriesField.innerHTML += "<option id="+ category._id + " value="+ category.name +">"+ category.name +"</option>";
+            });
+        }
     }
 
     onSubmit(){
@@ -13,6 +26,21 @@ class AddBusinessAsOwner extends Component{
     renderField(field){
         const { meta: { touched, error } } = field;
         const className = `form-group ${touched && error ? 'has-danger' : ''}`;
+        
+        if(field.type === 'select'){
+            return(
+                <div className = { className }>
+                    <label>{ field.label }</label>
+                    <select
+                        className="form-control"
+                        id={ field.id }
+                        { ...field.input }></select>
+                    <div className="text-help">
+                        { touched ? error : '' }
+                    </div>
+                </div>
+            );
+        }
         
         if(field.type !== 'textarea'){
             return(
@@ -46,7 +74,7 @@ class AddBusinessAsOwner extends Component{
     }
     
     render(){
-        const { handleSubmit } = this.props;
+        const { categories, handleSubmit } = this.props;
 
         return(
             <div className="Container animated fadeIn">
@@ -74,19 +102,29 @@ class AddBusinessAsOwner extends Component{
 
                         <Field
                             label="Telephone:"
-                            name="telephone"
+                            name="tel"
                             type="tel"
                             component={ this.renderField } />
 
                         <Field
+                            label="Select business category:"
+                            name="categories"
+                            id="categories"
+                            type="select"
+                            component={ this.renderField } />
+
+                        { this.renderCategories(categories) }
+                        <br />
+
+                        <Field
                             label="Open Time:"
-                            name="open_time"
+                            name="openTime"
                             type="number"
                             component={ this.renderField } />
 
                         <Field
                             label="Close Time:"
-                            name="close_time"
+                            name="closeTime"
                             type="number"
                             component={ this.renderField } />
 
@@ -102,13 +140,42 @@ function validate(values){
     const errors = {};
 
     if(!values.name){
-        errors.name = "Business name is required"
+        errors.name = "Business name is required";
+    }
+
+    if(!values.description){
+        errors.description = "Description for business is required";
+    }
+
+    if(!values.address){
+        errors.address = "Address field is required";
+    }
+
+    if(!values.tel){
+        errors.tel = "Telephone information is required";
+    }
+
+    if(!values.openTime){
+        errors.openTime = "Open hours is required";
+    }
+
+    if(!values.closeTime){
+        errors.closeTime = "Close hours is required";
     }
 
     return errors;
 }
 
+function mapStateToProps(state){
+    return {
+        categories: state.categories,
+        addBusinessStatus: state.addBusinessStatus
+    }
+}
+
 export default reduxForm({
     form: 'AddBusiness',
     validate
-}) (AddBusinessAsOwner);
+}) (
+    connect(mapStateToProps, { fetchCategories }) (AddBusinessAsOwner)
+);
