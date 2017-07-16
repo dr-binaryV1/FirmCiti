@@ -84,9 +84,11 @@ class AddBusinessAsOwner extends Component{
         if(this.props.signupStatus === true){
             document.getElementById("addBusinessResponse").innerHTML="Thank you, your business was successfully added.";
             document.getElementById("addBusinessResponse").className="success";
+
         } else if(this.props.signupStatus === false){
             document.getElementById("addBusinessResponse").innerHTML="There was an issue business to the system. Please try again later.";
             document.getElementById("addBusinessResponse").className="error";
+            
         } else{
             window.setTimeout(() => {
                 this.checkAddBusinessStatus();
