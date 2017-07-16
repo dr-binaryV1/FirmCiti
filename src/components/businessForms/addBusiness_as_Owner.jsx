@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { fetchCategories, postBusiness } from '../../actions';
 
@@ -25,7 +26,8 @@ class AddBusinessAsOwner extends Component{
     onSubmit(values){
         this.props.postBusiness(values);
 
-        //TODO check response of form submission to show error message or redirect.
+        //Not yet tested.
+        this.checkAddBusinessStatus();
     }
 
     renderField(field){
@@ -77,6 +79,20 @@ class AddBusinessAsOwner extends Component{
             );
         }
     }
+
+    checkAddBusinessStatus(){
+        if(this.props.signupStatus === true){
+            document.getElementById("addBusinessResponse").innerHTML="Thank you, your business was successfully added.";
+            document.getElementById("addBusinessResponse").className="success";
+        } else if(this.props.signupStatus === false){
+            document.getElementById("addBusinessResponse").innerHTML="There was an issue business to the system. Please try again later.";
+            document.getElementById("addBusinessResponse").className="error";
+        } else{
+            window.setTimeout(() => {
+                this.checkAddBusinessStatus();
+            }, 100)
+        }
+    }
     
     render(){
         const { categories, handleSubmit } = this.props;
@@ -94,7 +110,7 @@ class AddBusinessAsOwner extends Component{
                             component={ this.renderField } />
 
                         <Field
-                            label="Description:"
+                            label="Short description:"
                             name="description"
                             type="textarea"
                             component={ this.renderField } />
@@ -135,6 +151,7 @@ class AddBusinessAsOwner extends Component{
 
                         <button className="btn btn-primary btn-sm" type="submit">Add Business</button>
                     </form>
+                    <p id="addBusinessResponse"></p>
                 </div>
             </div>
         );
@@ -186,5 +203,5 @@ export default reduxForm({
     form: 'AddBusiness',
     validate
 }) (
-    connect(mapStateToProps, { fetchCategories, postBusiness }) (AddBusinessAsOwner)
+    withRouter(connect(mapStateToProps, { fetchCategories, postBusiness }) (AddBusinessAsOwner))
 );
