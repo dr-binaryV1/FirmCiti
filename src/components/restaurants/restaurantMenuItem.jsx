@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//TODO Make Responsive
 class MenuItem extends Component {
     render(){
         return (
@@ -11,11 +12,12 @@ class MenuItem extends Component {
                 <div className="Menu-Information">
                     <p>Item: { this.props.name }</p>
                     <p>Description: { this.props.description }</p>
+                    <label>Meal sizes:</label>
                     <select className="form-control"></select>
                 </div>
 
                 <div className="menu-price-info">
-                    <span> QTY: <input type="number" className="qty-input" id={ `${this.props.Id}-select` } name="quantity" /></span>
+                    <span> QTY: <input type="number" className="qty-input" id={ `${this.props.Id}-variant` } name="quantity" /></span>
                     <h3 className="right">--N/A--</h3>
                     <button className="btn btn-success btn-sm right">Add to Cart</button>
                 </div>
