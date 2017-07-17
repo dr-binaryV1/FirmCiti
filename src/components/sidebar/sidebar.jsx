@@ -10,6 +10,16 @@ class SideBar extends Component{
         }
     }
 
+    addBusiness(){
+        if(this.props.session.authenticated !== true){
+            this.props.history.push('/authorize');
+        }
+
+        if(this.props.session.authenticated === true){
+            this.props.history.push('/add-business-owner');
+        }
+    }
+
     render(){
         const { id } = this.props.match.params;
         if(id){
@@ -29,11 +39,11 @@ class SideBar extends Component{
                 <div className="sidebar-info">
                     <h5>Not here? Tell us what we're missing.</h5>
                     <p>If the business you're looking for isn't here, add it!</p>
-                    <Link
+                    <button
                         className="btn btn-sm btn-primary sb-btn"
-                        to="/add-business-owner">
+                        onClick={ this.addBusiness.bind(this) }>
                         Add a Business
-                    </Link>
+                    </button>
                     <hr />
                     <p>Got search feedback? Help us improve.</p>
                 </div>

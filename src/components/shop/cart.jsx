@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
 class ShoppingCart extends Component{
-    componentDidMount(){
-
-    }
-
     componentDidUpdate(){
         if(!this.props.session.authenticated){
             this.props.history.push('/authorize');
