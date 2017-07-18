@@ -64,7 +64,7 @@ class MenuItem extends Component {
             }
 
             // Add to cart once everything is checked
-            // this.props.addToCart(item, id);
+            // this.props.addToCart(item, userId);
         }
     }
     
