@@ -7,6 +7,7 @@ export const FETCH_SCHOOL = "fetch_school";
 export const FETCH_CATEGORIES = "fetch_categories";
 export const FETCH_RESTAURANTS = "fetch_restaurants";
 export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
+export const FETCH_SHOPPING_CART = "fetch_shopping_cart";
 export const FETCH_RESTAURANT_COMMENTS = "fetch_restaurant_comments";
 export const POST_BUSINESS = "post_business";
 export const POST_COMMENT = "post_comment";
@@ -68,6 +69,15 @@ export function fetchCategories(){
 
     return {
         type: FETCH_CATEGORIES,
+        payload: request
+    }
+}
+
+export function fetchShoppingCart(id){
+    const request = axios.get(`${ROOT_URL}/shoppingcart/${id}`);
+
+    return {
+        type: FETCH_SHOPPING_CART,
         payload: request
     }
 }
