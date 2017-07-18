@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 
 //TODO Make Responsive
 class MenuItem extends Component {
-    componentDidUpdate(){
-
-    }
-
     renderVariations(){
         let sizeSelect = document.getElementById(`${this.props.Id}_size`);
         if(sizeSelect){
@@ -22,6 +18,7 @@ class MenuItem extends Component {
         let qty = document.getElementById(`${this.props.Id}_qty`);
         
         priceLabel.innerHTML= `$${price}`;
+        priceLabel.value = price;
         qty.value = 1;
     }
 
@@ -36,7 +33,12 @@ class MenuItem extends Component {
 
         if(cost !== "Select Size" && parseInt(qty) > 0){
             document.getElementById(`${this.props.Id}_price`).innerHTML = `$${cost * qty}`;
+            document.getElementById(`${this.props.Id}_price`).value = cost * qty;
         }
+    }
+
+    addToCart(){
+        let finalPrice = document.getElementById(`${this.props.Id}_price`).value;
     }
     
     render(){
@@ -57,7 +59,7 @@ class MenuItem extends Component {
                 <div className="menu-price-info">
                     <span><input placeholder="QTY" onChange={ this.quantityChanged.bind(this) } type="number" className="qty-input" id={ `${this.props.Id}_qty` } name="quantity" /></span>
                     <h3 className="right-clear price" id={ `${this.props.Id}_price` }>--N/A--</h3>
-                    <button className="btn btn-success btn-sm right-clear">Add to Cart</button>
+                    <button className="btn btn-success btn-sm right-clear" onClick={ this.addToCart.bind(this) }>Add to Cart</button>
                 </div>
             </div>
         );
