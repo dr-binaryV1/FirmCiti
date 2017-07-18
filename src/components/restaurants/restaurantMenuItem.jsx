@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 
 //TODO Make Responsive
 class MenuItem extends Component {
+    renderVariations(){
+        let sizeSelect = document.getElementById(`${this.props.Id}_size`);
+        if(sizeSelect){
+            sizeSelect.innerHTML = "";
+            return _.map(this.props.variations, variant => {
+                sizeSelect.innerHTML += "<option id="+ variant._id + ">"+ variant.size +"</option>";
+            });
+        }
+    }
+    
     render(){
         return (
             <div className="MenuItemContainer" id={ this.props.Id } >
@@ -13,7 +23,8 @@ class MenuItem extends Component {
                     <p>Item: { this.props.name }</p>
                     <p>Description: { this.props.description }</p>
                     <label>Meal sizes:</label>
-                    <select className="form-control"></select>
+                    <select id={ `${this.props.Id}_size` } className="form-control"></select>
+                    { this.renderVariations() }
                 </div>
 
                 <div className="menu-price-info">

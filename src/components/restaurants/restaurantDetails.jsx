@@ -25,13 +25,13 @@ class RestaurantDetail extends Component{
 
     renderMenu(restaurant){
         return _.map(restaurant.menu, menuItem => {
-            console.log(menuItem);
             return(
                 <MenuItem
                     key={ menuItem._id }
                     Id={ menuItem._id }
                     name={ menuItem.name } 
-                    description={ menuItem.description }/>
+                    description={ menuItem.description }
+                    variations={ menuItem.variations }/>
             );
         });
     }
