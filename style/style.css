@@ -392,7 +392,7 @@ form a {
   border-radius: 5px;
 }
 
-.admission, .rent {
+.admission, .rent, .price {
   color: green;
   font-weight: bold;
 }
@@ -706,6 +706,12 @@ element.style {
 .basic-info{
   float: left;
   clear: left;
+}
+
+.right-clear{
+  margin-top: 10px;
+  float: right;
+  clear: right;
 }
 
 .shoppingCart-img{
