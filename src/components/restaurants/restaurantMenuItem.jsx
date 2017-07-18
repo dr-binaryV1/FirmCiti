@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { addToCart } from '../../actions';
 
 //TODO Make Responsive
 class MenuItem extends Component {
@@ -40,12 +43,24 @@ class MenuItem extends Component {
     }
 
     addToCart(){
+        let qty = document.getElementById(`${this.props.Id}_qty`).value;
         let finalPrice = document.getElementById(`${this.props.Id}_price`).value;
         let sizesControl = document.getElementById(`${this.props.Id}_size`);
-        let sizeLabel = sizes.options[sizes.selectedIndex].innerHTML;
+        let sizeLabel = sizesControl.options[sizesControl.selectedIndex].innerHTML;
 
         if(sizeLabel !== "Select Size"){
-            
+            let id = this.props.session.user._id;
+
+            let item = {
+                'name': this.props.name,
+                'description': this.props.description,
+                'quantity': parseInt(qty),
+                'price': finalPrice,
+            }
+
+            // Add to cart once everything is checked
+            // this.props.addToCart(item, id);
+
         }
     }
     
@@ -74,4 +89,11 @@ class MenuItem extends Component {
     }
 }
 
-export default MenuItem;
+function mapStateToProps(state){
+    return {
+        addToCartStatus: state.addToCartStatus,
+        session: state.session
+    }
+}
+
+export default connect(mapStateToProps, { addToCart }) (MenuItem);

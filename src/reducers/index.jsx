@@ -22,7 +22,7 @@ const rootReducer = combineReducers({
 	signupStatus: AuthReducer,
 	addBusinessStatus: BusinessReducer,
 	removeBusinessStatus: BusinessReducer,
-	shoppingCart: ShoppingCartReducer,
+	addToCartStatus: ShoppingCartReducer,
 	comment: CommentReducer,
 	session: sessionReducer,
 	form: formReducer
