@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { addToCart } from '../../actions';
 
@@ -49,9 +50,13 @@ class MenuItem extends Component {
         let sizeLabel = sizesControl.options[sizesControl.selectedIndex].innerHTML;
 
         if(sizeLabel !== "Select Size"){
-            let id = this.props.session.user._id;
+            const userId = this.props.session.user._id;
+
+            // Getting Restaurant ID from the URL parameter
+            const { id } = this.props.match.params
 
             let item = {
+                'companyId': id,
                 'name': this.props.name,
                 'description': this.props.description,
                 'quantity': parseInt(qty),
@@ -60,7 +65,6 @@ class MenuItem extends Component {
 
             // Add to cart once everything is checked
             // this.props.addToCart(item, id);
-
         }
     }
     
@@ -96,4 +100,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, { addToCart }) (MenuItem);
+export default withRouter(connect(mapStateToProps, { addToCart }) (MenuItem));

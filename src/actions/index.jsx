@@ -74,7 +74,7 @@ export function fetchCategories(){
 }
 
 export function fetchShoppingCart(id){
-    const request = axios.get(`${ROOT_URL}/shoppingcart/${id}`);
+    const request = axios.get(`${ROOT_URL}/users/${id}/shoppingcart`);
 
     return {
         type: FETCH_SHOPPING_CART,
@@ -128,7 +128,7 @@ export function postImages(values){
 }
 
 export function addToCart(values, id){
-    const request = axios.post(`${ROOT_URL}/shoppingcart/add/${id}`);
+    const request = axios.post(`${ROOT_URL}/users/${id}/shoppingcart`);
 
     return {
         type: ADD_TO_CART,
