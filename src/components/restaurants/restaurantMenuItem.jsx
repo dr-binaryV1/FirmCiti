@@ -55,7 +55,7 @@ class MenuItem extends Component {
                 </div>
 
                 <div className="menu-price-info">
-                    <span> QTY: <input onChange={ this.quantityChanged.bind(this) } type="number" className="qty-input" id={ `${this.props.Id}_qty` } name="quantity" /></span>
+                    <span><input placeholder="QTY" onChange={ this.quantityChanged.bind(this) } type="number" className="qty-input" id={ `${this.props.Id}_qty` } name="quantity" /></span>
                     <h3 className="right-clear price" id={ `${this.props.Id}_price` }>--N/A--</h3>
                     <button className="btn btn-success btn-sm right-clear">Add to Cart</button>
                 </div>
