@@ -10,6 +10,7 @@ export const FETCH_RESTAURANT_DETAIL = "fetch_restaurant_detail";
 export const FETCH_RESTAURANT_COMMENTS = "fetch_restaurant_comments";
 export const POST_BUSINESS = "post_business";
 export const POST_COMMENT = "post_comment";
+export const ADD_TO_CART = "add_to_cart";
 export const UPLOAD_IMAGES = "upload_images";
 export const LOGIN = "login";
 export const SIGNOUT = "signout";
@@ -112,6 +113,15 @@ export function postImages(values){
 
     return {
         type: UPLOAD_IMAGES,
+        payload: request
+    }
+}
+
+export function addToCart(values, id){
+    const request = axios.post(`${ROOT_URL}/shoppingcart/add/${id}`);
+
+    return {
+        type: ADD_TO_CART,
         payload: request
     }
 }

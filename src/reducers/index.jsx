@@ -8,6 +8,7 @@ import CategoriesReducer from './reducer_categories';
 import RestaurantReducer from './reducer_restaurant';
 import CommentReducer from './reducer_comment';
 import BusinessReducer from './reducer_business';
+import ShoppingCartReducer from './reducer_shoppingCart';
 import AuthReducer from './reducer_auth';
 import { sessionReducer } from 'redux-react-session';
 
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
 	signupStatus: AuthReducer,
 	addBusinessStatus: BusinessReducer,
 	removeBusinessStatus: BusinessReducer,
+	shoppingCart: ShoppingCartReducer,
 	comment: CommentReducer,
 	session: sessionReducer,
 	form: formReducer

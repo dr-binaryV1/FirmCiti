@@ -10,7 +10,7 @@ class MenuItem extends Component {
                 sizeSelect.innerHTML += "<option value="+ variant.price +" id="+ variant._id + ">"+ variant.size +"</option>";
             });
         }
-    }
+    }   
 
     sizeChanged(e){
         let price = e.target.options[e.target.selectedIndex].value;
@@ -23,12 +23,8 @@ class MenuItem extends Component {
     }
 
     quantityChanged(){
-        let qty = document.getElementById(`${this.props.Id}_qty`).value;
-        let sizes = document.getElementById(`${this.props.Id}_size`);
-        let cost = sizes.options[sizes.selectedIndex].value;
-
-        if(parseInt(qty) < 0) {
-            document.getElementById(`${this.props.Id}_qty`).value = 0;
+        if(parseInt(qty) < 1) {
+            document.getElementById(`${this.props.Id}_qty`).value = 1;
         }
 
         if(cost !== "Select Size" && parseInt(qty) > 0){
@@ -39,6 +35,12 @@ class MenuItem extends Component {
 
     addToCart(){
         let finalPrice = document.getElementById(`${this.props.Id}_price`).value;
+        let sizesControl = document.getElementById(`${this.props.Id}_size`);
+        let sizeLabel = sizes.options[sizes.selectedIndex].innerHTML;
+
+        if(sizeLabel !== "Select Size"){
+            
+        }
     }
     
     render(){
