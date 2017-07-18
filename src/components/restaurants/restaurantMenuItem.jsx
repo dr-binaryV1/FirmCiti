@@ -23,8 +23,14 @@ class MenuItem extends Component {
     }
 
     quantityChanged(){
+        let qty = document.getElementById(`${this.props.Id}_qty`).value;
+        let cost = document.getElementById(`${this.props.Id}_size`).value;
+
         if(parseInt(qty) < 1) {
             document.getElementById(`${this.props.Id}_qty`).value = 1;
+
+            document.getElementById(`${this.props.Id}_price`).innerHTML = `$${cost * 1}`;
+            document.getElementById(`${this.props.Id}_price`).value = cost * 1;
         }
 
         if(cost !== "Select Size" && parseInt(qty) > 0){
