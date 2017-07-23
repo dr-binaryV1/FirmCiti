@@ -15,7 +15,7 @@ class Auth extends Component {
     render(){
         return(
             <div className="AuthContainer animated fadeIn">
-                <h2>Get Authenticated or Join the FirmCiti Environment!</h2>
+                <h2>Get Authenticated or Join the JusBuss Environment!</h2>
                 <hr className="line-brightPink-left" />
                 <div className="LogInAuthContainer">
                     <LogIn />

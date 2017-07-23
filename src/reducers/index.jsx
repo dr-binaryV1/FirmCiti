@@ -18,6 +18,7 @@ const rootReducer = combineReducers({
 	schools: SchoolReducer,
 	categories: CategoriesReducer,
 	restaurants: RestaurantReducer,
+	addRestaurantStatus: RestaurantReducer,
 	loginStatus: AuthReducer,
 	signupStatus: AuthReducer,
 	addBusinessStatus: BusinessReducer,

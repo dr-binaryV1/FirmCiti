@@ -45,9 +45,9 @@ class MenuItem extends Component {
 
     addToCart(){
         let qty = document.getElementById(`${this.props.Id}_qty`).value;
-        let finalPrice = document.getElementById(`${this.props.Id}_price`).value;
         let sizesControl = document.getElementById(`${this.props.Id}_size`);
         let sizeLabel = sizesControl.options[sizesControl.selectedIndex].innerHTML;
+        let unitPrice = sizesControl.options[sizesControl.selectedIndex].value;
 
         if(sizeLabel !== "Select Size"){
             const userId = this.props.session.user._id;
@@ -60,8 +60,8 @@ class MenuItem extends Component {
                 'name': this.props.name,
                 'description': this.props.description,
                 'quantity': parseInt(qty),
-                'price': finalPrice,
-            }
+                'price': unitPrice,
+            };
 
             // Add to cart once everything is checked
             // this.props.addToCart(item, userId);
@@ -85,7 +85,7 @@ class MenuItem extends Component {
 
                 <div className="menu-price-info">
                     <span><input placeholder="QTY" onChange={ this.quantityChanged.bind(this) } type="number" className="qty-input" id={ `${this.props.Id}_qty` } name="quantity" /></span>
-                    <h3 className="right-clear price" id={ `${this.props.Id}_price` }>--N/A--</h3>
+                    <h3 className="right-clear price" id={ `${this.props.Id}_price` }>N/A</h3>
                     <button className="btn btn-success btn-sm right-clear" onClick={ this.addToCart.bind(this) }>Add to Cart</button>
                 </div>
             </div>

@@ -24,6 +24,8 @@ class ShoppingCart extends Component{
             <div className="Container animated fadeIn">
                 <h3>Shopping Cart</h3>
                 <hr className="line-brightPink-left" />
+                <img src="src/static/images/empty_shopping_cart.png" alt="empty shopping cart" />
+                <h3>Oooops! Your shopping cart is empty!</h3>
             </div>
         );
     }

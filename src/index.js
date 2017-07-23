@@ -12,6 +12,7 @@ import School from './components/schools/schoolIndex';
 import RestaurantDetails from './components/restaurants/restaurantDetails';
 import House from './components/houses/houseIndex';
 import HouseDetails from './components/houses/houseDetails';
+import AddHouse from './components/houses/addHouse';
 import Event from './components/events/eventIndex';
 import Header from './components/includes/header';
 import { Footer } from './components/includes/footer';
@@ -43,6 +44,7 @@ ReactDOM.render(
 						<Route path="/schools" component={School} />
 						<Route path="/authorize" component={Auth} />
 						<Route path="/signout" component={SignOut} />
+						<Route path="/houses/add-house" component={AddHouse} />
 						<Route path="/houses/:id" component={HouseDetails} />
 						<Route path="/houses" component={House} />
 						<Route path="/events" component={Event} />

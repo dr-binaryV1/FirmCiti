@@ -6,6 +6,12 @@ import { withRouter } from 'react-router-dom';
 import { fetchCategories, postBusiness } from '../../actions';
 
 class AddBusinessAsOwner extends Component{
+    componentDidUpdate(){
+        if(!this.props.session.authenticated){
+            this.props.history.push("/authorize");
+        }
+    }
+    
     componentDidMount(){
         this.props.fetchCategories();
     }
@@ -196,6 +202,7 @@ function validate(values){
 
 function mapStateToProps(state){
     return {
+        session: state.session,
         categories: state.categories,
         addBusinessStatus: state.addBusinessStatus
     }

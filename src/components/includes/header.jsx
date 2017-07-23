@@ -36,7 +36,7 @@ class Header extends Component{
                   	<div className="header-comps-left">
 						<Link to="/" >
 							<div className="logoContainer">
-								<h2>FirmCiti</h2>
+								<h2>JusBuss</h2>
 							</div>
 						</Link>
                     <div className="searchBarContainer">
