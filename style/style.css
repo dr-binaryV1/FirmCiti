@@ -259,7 +259,7 @@ form a {
   display: block;
   float: left;
   margin-top: 10mm;
-  margin-left: 6vw;
+  /*margin-left: 6vw;*/
   margin-right: 0%;
   max-width: 100% !important;
   /*outline: red solid;*/
@@ -269,6 +269,10 @@ form a {
 
 .AuthContainer h2 {
   color: #2F6EED;
+}
+
+.AuthContainer hr, .LogInAuthContainer, .AuthContainer h2{
+  margin-left: 6vw !important;
 }
 
 .LogInAuthContainer{
@@ -287,6 +291,10 @@ form a {
   padding: 2px 4px !important;
 }
 
+.LogInAuthContainer input{
+  padding: 0px 5px !important;
+}
+
 .SignUpAuthContainer{
   position: relative;
   width: 50%;
@@ -300,6 +308,10 @@ form a {
 
 .SignUpAuthContainer > .signupContainer > form > a{
   padding: 2px 4px !important;
+}
+
+.SignUpAuthContainer input{
+  padding: 0px 5px !important;
 }
 
 .form-button{
